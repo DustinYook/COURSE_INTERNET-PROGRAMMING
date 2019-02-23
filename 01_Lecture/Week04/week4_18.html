@@ -1,0 +1,26 @@
+<!--프로그램 목적: for문을 이용한 출력제어-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>for문</title>
+	</head>
+	<body>
+		<h3>for문을 이용한 출력</h3>
+		<hr>
+		<script>
+			for (var size = 10; size <= 35; size += 5) 
+			{ // span은 인라인요소
+				document.write("<span style='font-size:" + size + "px'>"); // openning tag
+				document.write(size + "px"); // content
+				document.write("</span>"); // closing tag
+			}
+			for (var size = 6; size >= 1; size--)
+			{ // h계열 태그는 블록요소
+				document.write("<h" + size + ">"); // openning tag
+				document.write("h" + size + " tag"); // content
+				document.write("</h" + size + ">"); // closing tag
+			}
+		</script>
+	</body>
+</html>

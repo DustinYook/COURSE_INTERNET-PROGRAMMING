@@ -1,0 +1,23 @@
+<!--프로그램 목적: 라디오버튼의 사용법-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>라디오버튼 만들기</title>
+	</head>
+	<body>
+		<h3>먹고 싶은 것 하나만 선택?</h3>
+		<hr/>
+		<form method="get">
+			<!--주의: 라디오버튼은 하나만 선택가능함-->
+			<!--그렇기 때문에 각 라디오버튼의 옵션의 name 속성값은 동일해야 함-->
+			<input type="radio" name="china" value="1">
+			짜장면<img src="media/jajang.png"><br/>
+			<input type="radio" name="china" value="2" checked>
+			<!--체크박스와 마찬가지로 checked 속성명을 쓰면 디폴트로 체크가 됨-->
+			짬뽕<img src="media/jjambbong.png"><br/>
+			<input type="radio" name="china" value="3">
+			탕수육<img src="media/tangsuyuk.png">
+		</form>
+	</body>
+</html>

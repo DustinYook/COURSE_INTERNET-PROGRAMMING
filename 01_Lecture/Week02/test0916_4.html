@@ -1,0 +1,23 @@
+<!--프로그램 목적: 비디오 삽입-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="dustin">
+        <title>비디오 삽입</title>
+    </head>
+    <body>
+        <h3>비디오 삽입</h3>
+        <hr/>
+        <!--controls: 컨트롤러 표시--> 
+        <!--autoplay: 자동재생(크롬과 모바일환경은 자동재생 지원 안함-->
+        <!--muted: 무음모드-->
+        <!--loop: 반복재생-->
+        <video src="media/bear.mp4" width="320" height="240" 
+            controls autoplay muted loop>
+            브라우저가 video 태그를 지원하지 않습니다.
+            <!--끝까지 지원하는 포맷을 찾이 못한 경우 텍스트 출력-->
+        </video>
+    </body>
+</html>

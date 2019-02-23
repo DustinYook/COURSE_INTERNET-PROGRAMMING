@@ -1,0 +1,21 @@
+﻿<!--동적으로 HTML element를 제거-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function removeNode() 
+            {
+                var parent = document.getElementById("target"); // parent의 id를 설정
+                var child = document.getElementById("p1"); // child의 id를 설정
+                parent.removeChild(child); // 주의) 반드시 parent가 child를 remove!
+            }
+        </script>
+    </head>
+    <body>
+        <div id="target">
+            <p id="p1">첫번째 단락</p>
+            <p id="p2">두번째 단락</p>
+        </div>
+        <button onclick="removeNode()">누르세요!</button>
+    </body>
+</html>

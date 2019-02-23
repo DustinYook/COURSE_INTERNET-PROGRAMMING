@@ -1,0 +1,21 @@
+﻿<!--HTML elements의 name 속성을 통해 객체를 받아오는 처리-->
+<!DOCTYPE >
+<html>
+    <head>
+        <script>
+            function process() 
+            {
+                var obj = document.myform.text1; 
+                // myform이라는 name을 가진 객체에서
+                // text1이라는 name을 가진 객체에 접근
+                alert(obj.value);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform"> <!--name 속성에 주목!-->
+            <input type="text" id="target" name="text1"> <!--name 속성에 주목!-->
+            <input type="submit" value="제출" onclick="process()">
+        </form>
+    </body>
+</html>

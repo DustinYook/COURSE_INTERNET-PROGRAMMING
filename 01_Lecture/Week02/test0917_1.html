@@ -1,0 +1,98 @@
+﻿<!--프로그램 목적: 구조화 시맨틱 태그에 대한 이해-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author">
+		<meta content="dustin">
+		<title>HTML5 문서 구조 시맨틱 태그 사용</title>
+		<!--CSS3 코드 작성부분-->
+		<style>
+			html,body 
+			{
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				text-align: center;
+			}
+			.header 
+			{
+				width: 100%;
+				height: 15%;
+				background: yellow;
+			}
+			.nav 
+			{
+				width: 15%;
+				height: 70%;
+				float: left;
+				background: orange;
+			}
+			.section 
+			{
+				width: 70%;
+				height: 70%;
+				float: left;
+				background: olivedrab;
+			}
+			.article1
+			{
+				width: 100%;
+				height: 40%;
+				float: left;
+				background: olive;
+			}
+			.article2
+			{
+				width: 100%;
+				height: 40%;
+				float: left;
+				background: olivedrab;
+			}
+			.aside 
+			{
+				width: 15%;
+				height: 70%;
+				float: left;
+				background: orange;
+			}
+			.footer 
+			{
+				width: 100%;
+				height: 15%;
+				clear: both;
+				background: plum;
+			}
+		</style>
+	</head>
+	<body> 
+		<!--body안에 시맨틱태그를 이용하여 구조화된 정보를 검색엔진에 전달-->
+		<!--HEADER-->
+		<!--역할: 사이트의 제목을 나타내는 부분-->
+		<header class="header">header</header>
+		<!--NAV-->
+		<!--역할: 메뉴를 나타내는 역할-->
+		<nav class="nav">nav</nav>
+		<!--SECTION-->
+		<!--역할: 사이트의 본문을 나타내는 역할-->
+		<!--검색엔진이 내용을 파악할 때 주로 보는 영역-->
+		<section class="section">
+			<!--각 영역의 헤딩은 h계열 태그를 이용하여 나타낸다-->
+			<h1>section</h1>
+			<!--ARTICLE-->
+			<!--역할: 본문과 관련있으면서 독립적인 내용을 표현-->
+			<article class="article1">
+				<h2>article1</h2>
+			</article>
+			<article class="article2">
+				<h2>article2</h2>
+			</article>
+		</section>
+		<!--ASIDE-->
+		<!--역할: 본문과 직접적인 관련은 없는 내용을 표현-->
+		<aside class="aside">aside</aside>
+		<!--FOOTER-->
+		<!--역할: 주로 저작권, 이용방침과 관련된 내용을 표현-->
+		<footer class="footer">footer</footer>
+	</body>
+</html>

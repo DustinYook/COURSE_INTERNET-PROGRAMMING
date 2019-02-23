@@ -1,0 +1,31 @@
+<!--프로그램 목적: 스핀버튼과 슬라이드 바로 편리한 숫자입력 구현-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>편리한 숫자 입력</title>
+	</head>
+	<body>
+		<h3>홈 제어시스템 - 온도조절</h3>
+		<hr>
+		<form>
+			<!--스핀버튼: 정교한 값 입력 시 적절-->
+			<label>
+				지속시간 (0.0 ~ 10.0시간) :
+				<input type="number" min="0.0" max="10.0" step="0.5">
+				<!--input type="number"는 스핀버튼을 생성함-->
+				<!--min:하한, max:상한, step:변화량-->
+			</label><br/><br/>
+			<!--슬라이드 바: 대략적인 값 입력 시 적절-->
+			<label>
+				온도 설정 : 10&deg;C
+				<input type="range" min="15" max="30" list="temperatures">30&deg;C
+				<datalist id="temperatures"> <!--input에서 드롭다운리스트 형태로 입력가능-->
+					<option value="15" label="Low"> <!--슬라이드 바에 눈금으로 표시-->
+					<option value="20" label="Medium">
+					<option value="25" label="High">
+				</datalist>
+			</label>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+
+        <!--TITLE-->
+        <title>DIV 객체 동적 생성 및 삭제</title>
+        <!--/TITLE-->
+
+        <!--CSS-->
+        <style>
+            div
+            {
+                background-color: yellow;
+            }
+        </style>
+        <!--/CSS-->
+
+        <!--JAVA SCRIPT-->
+        <script>
+            var newDIV; // DOM 객체
+            var child_id = 0; // 생성된 child의 id를 제어
+
+            function insert()
+            {
+                newDIV = document.createElement('div'); // 자식노드 생성
+
+                newDIV.innerHTML = '새로 생성된 DIV입니다.'; // HTML element의 content 설정
+                newDIV.setAttribute('id', child_id); // setAttribute("속성명", "속성값");
+                newDIV.style.backgroundColor = 'yellow'; // style 설정
+
+                /* 동적으로 이벤트 리스너 등록하는 처리 */
+                newDIV.addEventListener('click', remove, false); // 여기 중요! - 이벤트 리스너 등록
+                // 객체.addEventListener('이벤트(on 빼고)', true일 때 처리, false일 때 처리);
+
+                document.getElementById('target').appendChild(newDIV); // 자식노드 추가
+                child_id++; // 다른 id를 부여하기 위해 증가시킴
+            }
+            
+            function remove()
+            {
+                var child = this;
+                var parent = child.parentElement; // this는 선택된 객체
+                parent.removeChild(child); // 반드시 parent가 child를 삭제하는 방식 취해야 함
+            }
+        </script>
+        <!--/JAVA SCRIPT-->
+    </head>
+    <!--/HEAD-->
+
+    <!--BODY-->
+    <body>
+        <!--HEADER-->
+        <header>
+            <h3>DIV 객체를 동적으로 생성, 삽입, 삭제하는 예제</h3>
+            <hr>
+        </header>
+        <!--/HEADER-->
+
+        <!--SECTION-->
+        <section id="target">
+            <p>
+                DOM 트리에 동적으로 객체를 삽입할 수 있습니다.<br>
+                createElement(), appendChild(), removeChild() 메소드를 이용하여<br>
+                새로운 객체를 생성, 삽입, 삭제하는 예제입니다.
+            </p>
+            <a href="#" onclick="insert()">DIV 생성</a><br>
+        </section>
+        <!--/SECTION-->
+
+        <!--FOOTER-->
+        <footer></footer>
+        <!--/FOOTER-->
+    </body>
+    <!--/BODY-->
+</html>

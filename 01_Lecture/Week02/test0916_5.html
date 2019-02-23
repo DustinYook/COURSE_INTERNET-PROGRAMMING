@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="dustin">
+        <title>오디오 삽입</title>
+        <audio src="media/EmbraceableYou.mp3" controls autoplay loop>
+            브라우저가 audio 태그를 지원하지 않습니다. 
+        </audio>
+        <!--bgm으로 나오게 하고 싶으면 head 태그에 쓰면 됨-->
+    </head>
+    <body>
+        <h3>오디오 삽입</h3>
+        <hr/>
+        <!--controls: 컨트롤러 표시-->
+        <!--autoplay: 자동재생 (크롬과 모바일은 차단)-->
+        <!--loop:-->
+        <audio controls autoplay loop>
+            <source src="media/EmbraceableYou.mp3" type="audio/mpeg">
+            <!--mp3인 경우 audio/mpeg를 써야 함-->
+            <!--src를 따로 빼서 여러개 나열할 수 있음-->
+            <!--지원가능한 포맷 찾을 때까지 아래로 내려가며 찾은 경우 재생-->
+            브라우저가 audio 태그를 지원하지 않습니다. 
+            <!--끝까지 지원가능한 포맷 찾지 못하거나, audio 태그를 지원하지 않는 경우-->
+        </audio>
+    </body>
+</html>

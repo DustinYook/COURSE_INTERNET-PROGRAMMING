@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>체크박스 클릭</title>
+    </head>
+    <body>
+        <header>
+            <h3>물품을 선택하면 금액이 자동 계산됩니다.</h3>
+            <hr>
+        </header>
+        <section>
+            <form>
+                <input type="checkbox" id="hat" value="10000" onchange="getPrice('hat')">모자 1만원&nbsp;
+                <input type="checkbox" id="shoes" value="30000" onchange="getPrice('shoes')">구두 3만원&nbsp;
+                <input type="checkbox" id="bag" value="80000" onchange="getPrice('bag')">명품가방 8만원&nbsp;<br>
+                지불하실 금액 <input type="text" id="result">
+                <script>
+                    var result = 0; // 결과를 저장할 변수
+                    var temp = 0; // 임시로 더하거나 뺄 변수
+                    
+                    var flag1 = new Boolean(false); // 첫번째 체크박스 
+                    var flag2 = new Boolean(false); // 두번째 체크박스 
+                    var flag3 = new Boolean(false); // 세번째 체크박스 
+
+                    function getPrice(val)
+                    {
+                        if(val == "hat") // 모자
+                        {
+                            (flag1 == true) ? (flag1 = false) : (flag1 = true); // 체크여부 뒤집는 처리
+                            temp = parseInt(document.getElementById('hat').value);
+                            (flag1 == true) ? (result += temp) : (result -= temp); // 값을 처리
+                        }
+                        else if(val == "shoes") // 구두
+                        {
+                            (flag2 == true) ? (flag2 = false) : (flag2 = true); // 체크여부 뒤집는 처리
+                            temp = parseInt(document.getElementById('shoes').value);
+                            (flag2 == true) ? (result += temp) : (result -= temp); // 값을 처리
+                        }
+                        else if(val == "bag") // 가방
+                        {
+                            (flag3 == true) ? (flag3 = false) : (flag3 = true); // 체크여부 뒤집는 처리
+                            temp = parseInt(document.getElementById('bag').value);
+                            (flag3 == true) ? (result += temp) : (result -= temp); // 값을 처리
+                        }
+                        document.getElementById('result').value = result;
+                    }
+                </script>
+            </form>
+        </section>
+    </body>
+</html>

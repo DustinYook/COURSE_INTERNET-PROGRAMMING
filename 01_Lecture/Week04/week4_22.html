@@ -1,0 +1,41 @@
+<!--프로그램 목적: break문-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>break문</title>
+		<script>
+            function input()
+            {
+                while (true)
+                {
+                    score = parseInt(prompt("점수를 입력해주십시오", "0"));
+                    if(score >= 0 && score <= 100)
+                        break;
+                    else
+                        alert("잘못입력하셨습니다. 다시 입력해주십시오!");
+                }
+                getGrade();
+            }
+			function getGrade()
+			{
+				if (score >= 90) // score가 90 이상
+					grade = "A";
+				else if (score >= 80) // 80 이상 90 미만
+					grade = "B";
+				else if (score >= 70) // 70 이상 80 미만
+					grade = "C";
+				else if (score >= 60) // 60 이상 70 미만
+					grade = "D";
+				else if (score < 60) // 60 미만
+					grade = "F";
+				alert("당신의 평점은 " + grade + "입니다.")
+			}
+		</script>
+	</head>
+	<body>
+		<h3>나의 점수에 따른 평점은?</h3>
+		<hr>
+		<input type="submit" value="결과보기" onclick="input()">
+	</body>
+</html>

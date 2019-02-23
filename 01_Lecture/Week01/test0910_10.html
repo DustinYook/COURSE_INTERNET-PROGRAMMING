@@ -1,0 +1,34 @@
+<!--프로그램 목적: 블록요소와 인라인요소의 차이점-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;div&gt;블록과 &lt;span&gt;인라인</title>
+    </head>
+    <body>
+        <h3>사랑</h3>
+        <hr/>
+        <!--style attribute: inline CSS for an element -->
+        <!--div tag is a block element-->
+        <!--블록요소의 특징-->
+        <!--1. starts on a new line-->
+        <!--2. take up the full width of a page-->
+        <div style="background-color:skyblue; padding:20px;">
+            내가 사람의 방언과 천사의 말을 할지라도
+            <!--span tag is an inline element-->
+            <!--인라인요소의 특징-->
+            <!--1. doesn't cause a line break-->
+            <!--2. take up bounded space between openning and closing tag-->
+            <span style="color:red; background-color:aqua">사랑</span>이 없으면 소리 나는 구리와 울리는 꽹과리가 되고,
+            <span style="color:red; background-color:aqua">사랑</span>이 없으면 아무 것도 아니라.
+        </div>
+        <!--p tag is a block element -->
+        <p style="background-color:aquamarine;">
+            ~우리 서로 사랑하며 살아요~
+        </p>
+        <!--pre tag is a block element-->
+        <pre style="background-color:aqua;">
+            ~우리 서로 사랑하며 살아요~
+        </pre>
+    </body>
+</html>

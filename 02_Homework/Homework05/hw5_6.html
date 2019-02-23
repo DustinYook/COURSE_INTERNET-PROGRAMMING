@@ -1,0 +1,35 @@
+<!--프로그램 목적: 덧셈 계산기-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>덧셈 계산기</title>
+        <script language="javascript">
+            function addTwo() 
+            {
+                var x = parseInt(document.getElementById("x").value); // .value 빼먹지 않도록 주의!
+                var y = parseInt(document.getElementById("y").value);
+                document.getElementById("sum").value = x + y; 
+                // 변수 = parseInt(document.getElementById("ID 속성값").value); // HTML로부터 JS로 값을 가져옴
+                // HTML에서 지정된 ID 속성값은 JS에서 일종의 변수처럼 이용됨
+                // document.getElementById("ID 속성값).value = 설정할 값; // HTML에 JS의 처리결과 보냄
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>덧셈 계산기</h1>
+            <hr>
+        </header>
+        <section>
+            <form method="get">
+                첫번째 정수: <input type="text" id="x"><br>
+                두번째 정수: <input type="text" id="y"><br>
+                합계: <input type="text" id="sum">
+                <input type="button" value="계산" onclick="addTwo()">
+            </form>
+        </section>
+    </body>
+</html>

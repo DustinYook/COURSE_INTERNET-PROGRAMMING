@@ -1,0 +1,36 @@
+<!--프로그램 목적: 반복문 사용하기 #3-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>반복문 사용하기</title>
+        <style>
+            table, tr, td, th
+            {
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>구구단표</h3>
+        <script>
+            document.write("<table>"); // openning: table
+                document.write("<tbody>");
+                    for(var i = 1; i <= 9; i++)
+                    {
+                        document.write("<tr>"); // openning: tr
+                        for(var j = 1; j <= 9; j++)
+                        {
+                            document.write("<td>");
+                            document.write(i * j);
+                            document.write("</td>");
+                        }
+                        document.write("</tr>"); // closing: tr
+                    }
+                document.write("</tbody>");
+            document.write("</table>"); // closing: table
+        </script>
+    </body>
+</html>

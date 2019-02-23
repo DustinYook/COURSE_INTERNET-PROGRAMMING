@@ -1,0 +1,39 @@
+﻿<!--getElementsByTagName('element name')은 HTML elements의 collection(객체배열)을 반환-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>요소의 저장값 가져오기</title>
+    </head>
+    <body>
+        <ul>
+            <li>List item 1
+                <ul>
+                    <li>Sub List item 1</li>
+                    <li>Sub List item 2</li>
+                    <li>Sub List item 3</li>
+                </ul>
+            </li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+            <li>List item 4</li>
+            <li>List item 5</li>
+        </ul>
+        <script>
+            var list = document.getElementsByTagName('ul')[0]; 
+            // getElementsByTagName()은 태그명에 해당하는 요소를 객체배열의 형태로 받아옴
+
+            var allItems = list.getElementsByTagName('li');
+            // allItems는 <li>태그 객체의 컬렉션 (배열) - 컬렉션 : 노드로 구성
+            // allItems의 firstChild는 text(content) - 노드 : 노드값 또는 데이터
+            // 노드.data 또는 노드.nodeValue를 쓰면 노드에 저장된 값을 가져올 수 있음
+
+            // DOM 객체 개발에 필수적인 메소드
+            console.log(list); 
+            console.log(allItems);
+
+            for (var i = 0, length = allItems.length; i < length; i++)
+                alert(allItems[i].firstChild.nodeValue);
+                // alert(allItems[i].firstChild.data);
+        </script>
+    </body>
+</html>

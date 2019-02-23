@@ -1,0 +1,16 @@
+﻿<!--동적으로 style의 속성값을 변경-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="p1">This is a paragraph.</p>
+        <script>
+            function changeStyle() 
+            {
+                document.getElementById("p1").style.color = "red"; // 글자색 바꿈
+                document.getElementById("p1").style.fontFamily = "Century Schoolbook"; // 글씨체 바꿈
+                document.getElementById("p1").style.fontStyle = "italic"; // 기울임꼴로 바꿈
+            }
+        </script>
+        <input type="button" onclick="changeStyle()" value="눌러보세요" />
+    </body>
+</html>

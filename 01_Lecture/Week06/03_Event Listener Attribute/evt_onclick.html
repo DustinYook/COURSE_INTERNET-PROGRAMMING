@@ -1,0 +1,19 @@
+﻿<!--onclick 이벤트리스너 속성은 클릭을 할 때 호출-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function changeColor(c) 
+            {
+                document.getElementById("target").style.backgroundColor = c; // 선택된 경우
+            }
+        </script>
+    </head>
+    <body id="target">
+        <form method="POST">
+            <!-- 반드시 라디오버튼은 name이 동일해야 논리적오류가 없는 것-->
+            <input type="radio" name="C1" value="v1" onclick="changeColor('lightblue')">파랑색
+            <input type="radio" name="C1" value="v2" onclick="changeColor('lightgreen')">녹색
+        </form>
+    </body>
+</html>

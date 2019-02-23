@@ -1,0 +1,31 @@
+﻿<!--setTimeout('호출 메소드', 설정시간)는 설정시간(ms)이 지나면 설정한 메소드를 호출-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function showAlert() 
+            {
+                window.setTimeout(function() { alert("setTimeout()을 사용하여 표시됩니다."); }, 1000);
+                // setTimeout('호출 메소드', ms단위 호출주기); // 호출주기 이후 호출 (반복없음)
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            버튼을 누르면 1초 후에 경고 박스가 화면에 표시됩니다.<br>
+            <button onclick="showAlert()">눌러보세요</button>
+        </p>
+        <time id="timer">
+            <script>
+                function getNow()
+                {
+                    var now = new Date();
+                    var str = now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
+                    document.getElementById('timer').innerHTML = str;
+                    setTimeout('getNow()', 1000); // 주의) 첫번째 파라미터에 작은 따옴표 필요!
+                }
+                getNow();
+            </script>
+        </time>
+    </body>
+</html>

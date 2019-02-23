@@ -1,0 +1,24 @@
+<!--프로그램 목적: 덧셈연산 vs 문자열 연결연산-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>덧셈연산 vs 문자열 연결연산</title>
+	</head>
+	<body>
+		<h3>덧셈연산 vs 문자열 연결연산</h3>
+		<hr>
+		<script>
+			/* 시험에 내기 딱 좋으니 주의할 것! */
+			// '+'연산자는 overloaded operator이자 binary operator(operand1 + operand2)
+			// 1) operand1, operand2가 모두 숫자인 경우: 덧셈연산 (add operator)
+			// 2) operand1, operand2 둘 중 하나라도 문자열인 경우 : 문자열 연결연산 (concatenation operator)
+			document.write("abc" + 23 + "<br>"); // 문자열+숫자->연결연산:abc23
+			document.write(23 + "abc" + "<br>"); // 숫자+문자열->연결연산:23abc
+			document.write(23 + "35" + "<br>"); // 숫자+문자열->연결연산:2335 (?)
+			document.write(23 + 35 + "<br>"); // 숫자+숫자->덧셈연산:58
+			document.write(23 + 35 + "abc" + "<br>"); // (숫자+숫자->덧셈연산:58) >> (숫자+문자열->연결연산:58abc)
+			document.write("abc" + 23 + 35 + "<br><hr>"); // (문자열+숫자->연결연산:abc23) >> (문자열+숫자->연결연산:abc2335)
+		</script>
+	</body>
+</html>

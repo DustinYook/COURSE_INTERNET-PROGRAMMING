@@ -1,0 +1,36 @@
+﻿<!--var id = setInterval(메소드명, 호출주기)는 interval을 설정하는 메소드-->
+<!--clearInterval(id)는 interval을 해제하는 메소드 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var id;
+            // interval을 setting하는 함수
+            function changeColor() 
+            {
+                // id = setInterval(flashText, 1000); // 메소드 명만 쓸 수도 있고
+                id = setInterval('flashText()', 500); // '메소드 명()'로 쓸 수도 있음
+                window.alert(id);
+            }
+            // interval을 clear하는 함수
+            function stopTextColor() 
+            {
+                clearInterval(id);
+            }
+            function flashText() 
+            {
+                var elem = document.getElementById("target");
+                
+                // 아래의 테크닉 익혀두기! - 기존 설정값의 반대로 되도록 제어
+                elem.style.color = (elem.style.color == "red") ? "blue" : "red"; 
+                elem.style.backgroundColor = (elem.style.backgroundColor == "green") ? "yellow" : "green";
+            }
+        </script>
+    </head>
+    <body onload="changeColor()">
+        <div id="target">
+            <p>This is a Text.</p>
+        </div>
+        <button onclick="stopTextColor()">중지</button>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!--프로그램 목적: 내부 자바스크립트-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>script 태그에 자바스크립트 작성</title>
+		<script>
+			// 앞에 인라인속성으로 정의한 action을 함수로 뽑음 -> reusability 향상
+			/* 함수정의 */
+			function over(obj) 
+			{
+				obj.src = "media/banana.png";
+			}
+			function out(obj) 
+			{
+				obj.src = "media/apple.png";
+			}
+		</script>
+	</head>
+	<body>
+		<h3>마우스 올려 보세요</h3>
+		<hr> <!--함수호출-->
+		<img src="media/apple.png" alt="이미지" 
+		onmouseover="over(this)" onmouseout="out(this)">
+	</body>
+</html>

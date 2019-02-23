@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <!--TITLE-->
+        <title>캐치볼 게임</title>
+        <!--/TITLE-->
+    </head>
+    <!--/HEAD-->
+
+    <!--BODY-->
+    <body>
+        <canvas id="myCanvas" width="600" height="400" style="border:1px dotted red"></canvas>
+
+        <!--jQuery import-->
+        <script src="http://code.jquery.com/jquery-1.10.1.js"></script> 
+        
+        <!--JAVA SCRIPT-->
+        <script>
+            var ballr = 10;
+            var paddlecolor = "#FFFFFF"; // 
+            var ballcolor = "#FFFFFF";
+            var backcolor = "#000000";
+
+            var x = 25; // 원의 중심 (X 좌표)
+            var y = 250; // 원의 중심 (Y 좌표)
+            
+            var dx = 1.5; // 이동거리 (X축 기준)
+            var dy = -4; // 이동거리 (Y축 기준)
+            
+            var canvas; // canvas 객체를 저장할 변수
+            var ctx; // context 객체를 저장할 변수
+
+            var WIDTH;
+            var HEIGHT;
+
+            var paddlex;
+            var paddleh = 10;
+            var paddlew = 75;
+
+            var rightDown = false; // 오른쪽 방향키가 눌렸는지 여부를 저장하는 플래그변수 (T: 눌림, F: 안눌림)
+            var leftDown = false; // 왼쪽 방향키가 눌렸는지 여부를 저장하는 플래그변수 (T: 눌림, F: 안눌림)
+            
+            var canvasMinX = 0;
+            var canvasMaxX = 0;
+            
+            var intervalId = 0;
+            
+            var PADDING = 1;
+
+            function init()
+            {
+                canvas = document.getElementById("myCanvas"); // canvas 요소 가져옴
+                ctx = canvas.getContext("2d"); // context 객체 가져옴
+                WIDTH = $('#myCanvas').width(); // canvas의 너비 설정
+                HEIGHT = $('#myCanvas').height(); // canvas의 높이 설정
+
+                paddlex = WIDTH / 2;
+
+                canvasMinX = $('#myCanvas').offset().left;
+                canvasMaxX = canvasMinX + WIDTH;
+
+                intervalId = setInterval(draw, 10); 
+            }
+
+            // 원을 그리는 함수
+            function circle(x, y, r)
+            {
+                ctx.beginPath(); // 초기화
+                ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                ctx.closePath(); // 닫힌도형 생성
+                ctx.fill(); // 화면출력
+            }
+
+            // 직사각형을 그리는 함수
+            function rect(x, y, w, h)
+            {
+                ctx.beginPath(); // 초기화
+                ctx.rect(x, y, w, h);
+                ctx.closePath(); // 닫힌도형 생성
+                ctx.fill(); // 화면출력
+            }
+
+            function clear()
+            {
+                ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                rect(0,0, WIDTH, HEIGHT);
+            }
+
+            /* 방향키 조정하는 코드블럭 - 시작 */
+            // 방향키를 누른경우 이벤트처리
+            function onKeyDown(evt)
+            {
+                if(evt.keyCode == 39) // 방향키 '<-'가 눌린경우
+                    rightDown = true; // 플래그를 눌림으로 바꿈
+                else if(evt.keyCode == 37) // 방향키 '->'가 눌린경우
+                    leftDown = true;
+            }
+            // 방향키를 누르지 않은 경우 이벤트처리
+            function onKeyUp(evt)
+            {
+                if(evt.keyCode == 39)
+                    rightDown = false; // 플래그가 눌리지 않음으로 바꿈
+                else if(evt.keyCode == 37)
+                    leftDown = false;
+            }
+            $(document).keydown(onKeyDown); // 키가 눌린 경우 호출
+            $(document).keyup(onKeyUp); // 키가 눌리지 않은 경우 호출
+            /* 방향키 조정하는 코드블럭 - 끝 */
+
+            function onMouseMove(evt)
+            {
+                if(evt.pageX > canvasMinX && evt.pageX < canvasMaxX)
+                {
+                    paddlex = Math.max(evt.pageX - canvasMinX - (paddlew/2), 0);
+                    paddlex = Math.min(WIDTH - paddlew, paddlex);
+                }
+            }
+            $(document).mousemove(onMouseMove);
+
+            function draw()
+            {
+                ctx.fillStyle = backcolor;
+                clear();
+
+                ctx.fillStyle = ballcolor;
+                circle(x, y, ballr);
+
+                if(rightDown)
+                    paddlex += 5;
+                else if(leftDown)
+                    paddlex -= 5;
+                    
+                ctx.fillStyle = paddlecolor;
+                rect(paddlex, HEIGHT - paddleh, paddlew, paddleh);
+
+                if(x + dx + ballr > WIDTH || x + dx - ballr < 0)
+                    dx = -dx;
+
+                if(y + dy - ballr < 0)
+                    dy = -dy;
+                else if(y + dy + ballr > HEIGHT - paddleh)
+                {
+                    if(x > paddlex && x < paddlex + paddlew)
+                    {
+                        dx = 8 * ((x - (paddlex + paddlew / 2)) / paddlew);
+                        dy = -dy;
+                    }
+                    else if(y + dy + ballr > HEIGHT)
+                        clearInterval(intervalId);
+                }
+
+                x += dx;
+                y += dy;
+            }
+            init();
+        </script>
+        <!--/JAVA SCRIPT-->
+    </body>
+    <!--/BODY-->
+</html>

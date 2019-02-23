@@ -1,0 +1,32 @@
+<!--프로그램 목적: iframe과 target 속성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="dustin">
+        <title>사이트 리스트</title>
+    </head>
+    <body>
+        <h3>사이트 리스트</h3>
+        <ul>
+            <!--target 속성에 주의-->
+            <li>
+                <!--name: iframe의 name 속성에 정의된 것을 띄움-->
+                <a href="http://www.w3c.org" target="right">W3C</a>
+            </li>
+            <li>
+                <!--_self: 자기 자신에 덮어씌우기 됨-->
+                <a href="http://www.etnews.com" target="_self">전자신문</a>
+            </li>
+            <li>
+                <!--_top: 최상위 브라우저에 띄움-->
+                <a href="http://www.mk.co.kr" target="_top">매일경제신문</a>
+            </li>
+            <li>
+                <!--_blank: 새 창에 띄움-->
+                <a href="http://www.w3c.org" target="_blank">새 창에 W3C</a>
+            </li>
+        </ul>
+    </body>
+</html>

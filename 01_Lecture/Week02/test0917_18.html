@@ -1,0 +1,27 @@
+<!--프로그램 목적: 입력할 정보의 힌트 보여주기 및 형식을 가진 텍스트 입력-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>형식을 가진 텍스트 입력</title>
+	</head>
+	<body>
+		<h3>회원 정보를 입력해주세요.</h3>
+		<hr/>
+		<form>
+			<!--input type="email" : 이메일 형식으로 입력-->
+			<label>email : <input type="email" placeholder="id@host"></label><br/>
+			<!--input type="url" : URL 형식으로 입력-->
+			<label>홈페이지 : <input type="url" placeholder="http://"></label><br/>
+			<!--input type="tel" : 전화번호 형식으로 입력-->
+			<label>전화번호 : <input type="tel" placeholder="010-1234-5678"></label><br/>
+			<input type="submit" value="확인"><br/><br/>
+			<hr/>
+			<!--placeholder 속성을 통해 사용자에게 입력예시를 제공할 수 있다-->
+			<!--value 속성과 언뜻 비슷해 보이나 value는 입력을 활성화해도 값이 사라지지 않지만-->
+			<!--placeholder는 입력을 활성화하면 값이 사라진다는 차이점이 있음을 명심하자-->
+			<label>검색어 : <input type="search" placeholder="검색어"></label>
+			<input type="button" value="검색">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!--onmousedown과 onmouseup의 사용법-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            // 버튼을 누르고 있는 상태에서 적용
+            function OnButtonDown(button) 
+            {
+                button.style.color = "#ff0000"; // 글자색을 바꿈
+            }
+
+            // 버튼을 누르지 않고 있는 상태에서 적용
+            function OnButtonUp(button) 
+            {
+                button.style.color = "#000000"; // 글자색을 바꿈
+            }
+        </script>
+    </head>
+
+    <body>
+        <!--특이한 점은 onmousedown과 onmouseup의 두 가지 이벤트리스너 속성을 정의해야 한다는 것-->
+        <button onmousedown="OnButtonDown (this)" onmouseup="OnButtonUp (this)">눌러보세요!</button>
+    </body>
+</html>

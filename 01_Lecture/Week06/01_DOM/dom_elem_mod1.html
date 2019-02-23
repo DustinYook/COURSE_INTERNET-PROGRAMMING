@@ -1,0 +1,19 @@
+﻿<!--동적으로 src 속성값을 변경-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <img id="image" src="pome.png" width="120" height="100">
+        <script>
+            var flag = new Boolean(false);
+            function changeImage() // 누르면 이미지가 바뀜
+            {
+                if(flag)
+                    document.getElementById("image").src = "poodle.png"; 
+                else
+                    document.getElementById("image").src = "pome.png"; 
+                flag = !flag; // 뒤집어 주는 처리
+            }
+        </script>
+        <input type="button" onclick="changeImage()" value="눌러보세요"/> 
+    </body>
+</html>

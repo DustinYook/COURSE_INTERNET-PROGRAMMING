@@ -1,0 +1,50 @@
+<!--중간고사 1번 문항: 최대공약수 계산-->
+<!--주의사항) 숫자 이외의 문자를 입력 시 경고창 띄우기-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>중간고사 1번</title>
+        <style>
+            body{text-align:center;}
+        </style>
+    </head>
+    <body>
+        <h3>중간고사 1번</h3>
+        <hr>
+        <!--숫자만 받게 예외처리-->
+        <form>
+            <label>A:&nbsp;<input type="text" id="num1"></label>&nbsp; 
+            <label>B:&nbsp;<input type="text" id="num2"></label>&nbsp;
+            <input type="button" value="계산" onclick="gcd()">&nbsp;
+            <label>최대공약수:&nbsp;<input type="text" id="result" readonly></label>
+            <script>
+                function gcd() 
+                {
+                    var n1 = document.getElementById("num1").value; // 192
+                    var n2 = document.getElementById("num2").value; // 72
+        
+                    if (!isNaN(n1) && !isNaN(n2)) 
+                    {
+                        n1 = parseInt(n1);
+                        n2 = parseInt(n2);
+                        if (n1 < 0 || n2 < 0)
+                            alert("잘못입력");    
+                        else
+                        {
+                            var lim = (n1 > n2) ? n1 : n2;
+                            for (var i = lim; i >= 1; i--) 
+                            {
+                                if (n1 % i == 0 && n2 % i == 0)
+                                    break;
+                            }
+                            document.getElementById("result").value = i;
+                        }
+                    }
+                    else 
+                        alert("잘못입력"); 
+                }
+                </script>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!--hw6_03.html : 정수 5개 입력받아 역순으로 출력-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>정수 5개 역순출력</title>
+    </head>
+    <body>
+        <header>
+            <h1>정수 5개 입력받아 역순으로 출력</h1>
+            <hr>
+        </header>
+        <section>
+            <script>
+                /* 프롬프트로 입력처리 */
+                var str = prompt("정수입력", "(25, 10, 5, 80, 12)"); 
+                
+                /* 문자열 가공처리 */
+                var num = str.split(", ");
+                num[0] = num[0].replace("(", ""); // 앞의 괄호처리
+                num[4] = num[4].replace(")", ""); // 뒤의 괄호처리
+
+                /* 입력된 배열출력 */
+                document.write("<b>입력된 수의 배열</b>" + "<br>");
+                for(i = 0; i < 5; i++)
+                    document.writeln(num[i]);
+                document.write("<br><br>");
+
+                /* 오름차순 정렬처리 */
+                num.sort(function(a, b){return a - b;}); // 오름차순 처리
+                document.write("<b>오름차순으로 정렬된 배열</b>" + "<br>");
+                for(i = 0; i < 5; i++)
+                    document.writeln(num[i]);
+                document.write("<br><br>");
+
+                /* 처리된 배열출력 */
+                num.sort(function(a, b){return b - a;}); // 내림차순 처리
+                document.write("<b>내림차순으로 정렬된 배열</b>" + "<br>");
+                for(i = 0; i < 5; i++)
+                    document.writeln(num[i]);
+            </script>
+        </section>
+    </body>
+</html>

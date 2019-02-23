@@ -1,0 +1,29 @@
+<!--프로그램 목적: 간단한 자기소개서 작성폼 만들기-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>텍스트 입력 폼</title>
+    </head>
+    <body>
+        <h3>자기소개서 작성</h3>
+        <hr>
+        <form>
+            <!--이름-->
+            <label for="user_name">이름</label>
+            <!--for 속성은 label이 bound된 form의 element를 나타냄-->
+            <input type="text" value="" size="10" id="user_name"><br/>
+            
+            <!--비밀번호-->
+            <label for="user_pw">비밀번호</label>
+            <input type="password" value="" size="10" maxlength="4" id="user_pw"><br/>
+
+            <!--자기소개서-->
+            <label for="self">자기소개서</label><br/>
+            <!--input type="text"는 한 줄만 입력가능-->
+            <!--textarea는 여러줄 입력가능-->
+            <!--보여지는 입력상자에서 cols는 열의 개수, rows는 행의 개수를 지정함-->
+            <textarea cols="20" rows="5" id="self">이곳에 자기소개서 작성</textarea>
+        </form>
+    </body>
+</html>

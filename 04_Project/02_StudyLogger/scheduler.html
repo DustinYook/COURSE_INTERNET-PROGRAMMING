@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="yook">
+        <meta name="description" content="record time">
+        <meta name="keywords" content="record time">
+
+        <!--TITLE-->
+        <title>업무기록도구</title>
+        <!--/TITLE-->
+
+        <!--CSS-->
+        <style>
+            body
+            {
+                text-align: center;
+            }
+        </style>
+        <!--/CSS-->
+
+        <!--JAVA SCRIPT-->
+        <script>
+            var str;
+            function getNow()
+            {
+                var now = new Date();
+                str = now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
+                document.getElementById('timer').innerHTML = str;
+                setTimeout(getNow, 1000);
+            }
+            getNow();
+        </script>
+        <!--/JAVA SCRIPT-->
+    </head>
+    <!--/HEAD-->
+
+    <!--BODY-->
+    <body>
+        <!--HEADER-->
+        <header>
+            <h3>업무종료 시점을 기록하는 업무기록도구입니다.</h3>
+            <p>종료한 업무의 이름을 입력하고 기록버튼을 누르면 됩니다.</p>
+            <hr>
+        </header>
+        <!--/HEADER-->
+
+        <!--SECTION-->
+        <section>
+            <div id="timer">
+                <script>
+                    var time;
+                    function getNow()
+                    {
+                        var now = new Date(); // 현재시간을 받아옴
+                        var hr = now.getHours();
+                        var min = now.getMinutes();
+                        var sec = now.getSeconds();
+                        var obj = document.getElementById("timer");
+                        obj.innerHTML = "현재시간은 " + hr + "시 " + min + "분 " + sec + "초 입니다.";
+                        setInterval(getNow, 1000);
+                    }
+                    getNow();
+                </script>
+            </div>
+            
+            <form>
+                <input type="text" id="user">
+                <button onclick="addList()">기록</button>
+            </form>
+
+            <div id="parent">
+                <script>
+                    function addList()
+                    {
+                        var node = document.createElement('div');
+                        node.innerHTML = time + " // " + document.getElementById('user').value;
+                        document.getElementById('parent').appendChild(node);
+                    }
+                </script>
+            </div>
+        </section>
+        <!--/SECTION-->
+
+        <!--FOOTER-->
+        <hr>
+        <footer></footer>
+        <!--/FOOTER-->
+    </body>
+    <!--/BODY-->
+</html>

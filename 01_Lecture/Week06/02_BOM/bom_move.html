@@ -1,0 +1,24 @@
+﻿<!--window 객체의 moveTo와 moveBy 메소드-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var w;
+            function openWindow() 
+            {
+                w = window.open('http://www.google.com', '_blank', 'width=300, height=300', true);
+                w.document.write("<p>오늘 다음과 같은 상품을 싸게 팝니다.</p>");
+                w.moveTo(300, 300); // 절대위치 기준으로 window 객체를 위치시킴
+            }
+            function moveWindow() 
+            {
+                w.moveBy(10, 0); // 현재 위치에서 +10, +10 씩 이동 (아마 단위는 픽셀일 듯) - 상대위치 기준
+                w.focus();
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="윈도우 생성" onclick="openWindow()" /><br>
+        <input type="button" value="윈도우 이동" onclick="moveWindow()" />
+    </body>
+</html>

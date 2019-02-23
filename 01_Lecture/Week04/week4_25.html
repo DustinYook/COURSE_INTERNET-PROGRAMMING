@@ -1,0 +1,36 @@
+﻿<!--프로그램 목적: 전역함수(built-in function-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 전역함수</title>
+		<script>
+			function evalParseIntIsNaN() 
+			{
+				// eval("expr"): expr의 평가값을 리턴 
+				var res = eval("2*3+4*6"); // res는 30
+				document.write("eval(\"2*3+4*6\")는 " + res + "<br>");
+
+				// parseInt("숫자문자열"): 숫자문자열을 숫자형으로 바꾸어 리턴
+				// 숫자 아닌경우 NaN(Not a Number)을 리턴
+				var m = parseInt("32");
+				document.write("parseInt(\"32\")는 " + m + "<br>");
+				var n = parseInt("0x32");
+				document.write("parseInt(\"0x32\")는 " + n + "<br>");
+				// "hello"는 정수로 변환할 수 없으므로 parseInt("hello")는 NaN 리턴
+				n = parseInt("hello");
+				document.write(n);
+				document.write("<br>") 
+				if (isNaN(n)) // isNaN()은 인자가 숫자가 아닌 경우 true를 리턴
+					document.write("hello는 숫자가 아닙니다.");
+			}
+		</script>
+	</head>
+	<body>
+		<h3>eval(), parseInt(), isNaN()</h3>
+		<hr>
+		<script>
+			evalParseIntIsNaN();
+		</script>
+	</body>
+</html>

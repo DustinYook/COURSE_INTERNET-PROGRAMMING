@@ -1,0 +1,43 @@
+﻿<!--list-style:none;과 display:inline;은 수평 navbar를 만드는데 기본-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			ul 
+			{ 	
+				list-style:none; /* 중요) 마커를 표시하지 않게 함 */
+				text-align:center; 
+				border-top:1px solid red; 
+				border-bottom:1px solid red; 
+				padding:10px 0; 
+			}
+			ul > li /* child selector */ 
+			{ 	
+				display:inline; 
+				/* 블록요소인 li를 인라인요소처럼 취급 */
+				/* 메뉴바를 만들 때 많이 사용 */
+				text-transform:uppercase; 
+				padding:0 10px; 
+				letter-spacing:10px; 
+				/* letter-spacing 프로퍼티는 자간제어 */
+			}
+			ul li a /* descendent selector */
+			{ 
+				text-decoration:none;
+				color:black;
+			}
+			ul li a:hover 
+			{ 
+				text-decoration:underline; 
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</body>
+</html>

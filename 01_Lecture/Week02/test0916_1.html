@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!--HTML5-->
+<!--프로그램 목적: 인라인 프레임의 기초학습-->
+<html>
+    <head>
+        <meta charset="UTF-8"> <!--인코딩 방식 서술-->
+        <meta name="author"> <!--저자-->
+        <meta content="dustin"> <!--저자명-->
+        <title>인라인 프레임</title> <!--브라우저의 탭 이름으로 설정됨-->
+    </head>
+    <body>
+        <h3>2개의 신문 사이트입니다.</h3> <!--헤딩을 표시-->
+        <hr/> <!--하나의 수평선을 그음-->
+        <iframe src="http://www.etnews.com" width="25%" height="25%"></iframe>
+        <iframe src="http://www.mk.co.kr" width="25%" height="25%"></iframe>
+        <!--주의) 구글과 네이버는 iframe을 거절하는 속성을 정의하여 나타나지 않음-->
+        <iframe src="https://www.google.com/" width="25%" height="25%"></iframe>
+        <iframe src="https://www.naver.com/" width="25%" height="25%"></iframe>
+        
+        <!--iframe은 인라인요소로 자동 줄바꿈이 되지 않음-->
+        <iframe src="http://www.etnews.com" 
+                srcdoc="<html>
+                            <head>hello world</head>
+                            <body>hello world</body>
+                        </html>" width="100%">
+        </iframe> <!--src와 srcdoc을 동시에 쓰면 srcdoc을 우선함-->
+        <!--srcdoc은 CSS 인라인스타일과 비슷하게 코드를 넣을 수 있음-->
+    </body>
+</html> 

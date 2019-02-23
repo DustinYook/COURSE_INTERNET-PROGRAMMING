@@ -1,0 +1,40 @@
+<!--프로그램 목적: 반복문 사용하기 #2-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>반복문 사용하기</title>
+        <style>
+            table, tr, td, th
+            {
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            document.write("<table>"); // openning: table
+                // Table Header
+                document.write("<theader>");
+                    document.write("<tr>");
+                        document.write("<th>섭씨온도</th>");
+                        document.write("<th>화씨온도</th>");
+                    document.write("</tr>");
+                document.write("</theader>");
+                // Table Body
+                document.write("<tbody>"); // openning: tbody
+                    for(var i = 0; i <= 10; i++)
+                    {
+                        document.write("<tr>");
+                            document.write("<td>" + i + "</td>");
+                            document.write("<td>" + (i * 9/5 + 32).toFixed(1) + "</td>"); 
+                            // 객체명.toFixed(자릿수): 표시할 자릿수를 지정할 수 있음
+                        document.write("</tr>");
+                    }
+                document.write("</tbody>"); // closing: tbody
+            document.write("</table>"); // closing: table
+        </script>
+    </body>
+</html>

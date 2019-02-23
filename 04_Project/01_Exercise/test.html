@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="yook">
+        <meta name="description" content="screen box">
+        <meta name="keywords" content="screen box">
+        <title>나의 홈페이지</title>
+        <style>
+            header, footer
+            {
+                text-align:center;
+            }
+            #confirm
+            {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            img
+            {
+                width: 50%;
+                height: 50%;
+            }
+            figure
+            {
+                text-align: center;
+            }
+            #confirm
+            {
+                background-color: gray;
+                padding: 10px;
+                text-align: center;
+                vertical-align: center;
+                width: 50%;
+            }
+        </style>
+        <script>
+            function func()
+            {
+                document.getElementById("confirm").style.display = "none";
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>나의 홈페이지</h1>
+        </header>
+        <section>
+            <div id="confirm">
+                <span>쿠키 이용정책에 동의하시겠습니까?</span>
+                <input type="button" value="확인" onclick="func()"> 
+            </div>
+            <figure>
+                <img src="sunshine.jpg">
+            </figure>
+        </section>
+        <footer>
+            <hr>
+            <span id="copy">copyright &copy;2018 Dustin Yook</span>
+        </footer>
+    </body>
+</html>

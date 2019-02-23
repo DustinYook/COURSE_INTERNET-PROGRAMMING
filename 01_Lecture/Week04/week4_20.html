@@ -1,0 +1,26 @@
+<!--프로그램 목적: do-while문-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>do-while 문</title>
+		<script>
+			function cumulativeAdd()
+			{
+				var n = prompt("0보다 큰 정수를 입력하세요", 0);
+				n = parseInt(n); // 문자열 n을 숫자로 바꿈
+				var i = 0, sum = 0;
+				do // do-while문은 while문과 다르게 반드시 한 번은 수행한다
+				{
+					sum += i;
+					i++;
+				} while (i <= n); // i가 0~n까지 반복  
+				alert("0에서 " + n + "까지 합은 " + sum);
+			}
+		</script>
+	</head>
+	<body>
+		<h3>do-while문으로 0에서 n까지 합</h3>
+		<hr>
+		<button onclick="cumulativeAdd()">누적합 구하기</button>
+	</body>

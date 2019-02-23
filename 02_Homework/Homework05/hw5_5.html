@@ -1,0 +1,64 @@
+<!-- 숫자 알아 맞추기 -->
+<!-- 고정된 변수(정답 숫자)를 초기화하여 생성 -->
+<!-- 사용자가 답을 제시하면 정답 숫자와 비교하여 제시된 정수가 더 높은지 낮은지 표시 -->
+<!-- 정수의 범위는 1부터 100으로 함 -->
+<!-- 게임이 끝나면 몇번만에 맞추었는지 출력 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>숫자 알아 맞추기</title>
+        <script>
+            var cnt = 0; // 시도횟수 (반드시 전역변수로 선언해야 함)
+            var str = " "; // 힌트를 저장
+            var answer = Math.floor((Math.random() * 100) + 1); // 1부터 100사이의 난수생성
+            // console.log(Math.random()); // Math.random(): 0<=N<=1의 난수 생성
+            // console.log(Math.floor(3.141592)); // Math.floor(): 소숫점 자리에서 버림
+            // console.log(Math.ceil(3.141592)); // Math.ceil(): 소숫점 자리에서 올림
+            // console.log(Math.floor(Math.random() * 10) + 10);
+
+            /* 숫자 알아 맞추기 함수 */
+            function guess() 
+            {
+                // 확인용 경고창
+                alert(answer); 
+
+                // HTML에서 값을 받아옴
+                input = parseInt(document.getElementById("user").value); 
+
+                // 함수의 처리부분
+                if (answer > input)
+                    str = "높습니다.";
+                else if (answer < input)
+                    str = "낮습니다.";
+                else if (answer == input) 
+                    str = "성공입니다.";
+                cnt++;
+
+                // 처리결과를 HTML으로 보냄
+                document.getElementById("hint").value = str; 
+                document.getElementById("try").value = cnt;
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>숫자 맞추기 게임</h1>
+            <hr>
+        </header>
+        <section>
+            <p>
+                이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.<br>
+                숫자는 1부터 100사이에 있습니다.
+            </p>
+            <form method="get">
+                숫자: <input type="text" id="user">
+                <input type="button" onclick="guess()" value="확인"><br>
+                추측횟수: <input type="text" id="try">
+                힌트: <input type="text" id="hint">
+            </form>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>중간고사 2번</title>
+        <style>body{text-align:center;}</style>
+    </head>
+    <body>
+        <h3>중간고사 2번</h3>
+        <hr>
+        <form id="target">
+            <label><input type="checkbox" value="1000" id="f0" onchange="calc('0')">딸기</label>
+            <label><input type="checkbox" value="2000" id="f1" onchange="calc('1')">당근</label>
+            <label><input type="checkbox" value="5000" id="f2" onchange="calc('2')">수박</label>
+            <label><input type="checkbox" value="10000" id="f3" onchange="calc('3')">참외</label>
+            <label><input type="checkbox" value="12000" id="f4" onchange="calc('4')">메론</label>&nbsp;
+            <input type="text" id="result" value="0" readonly><br>
+            <script>
+                var flag = [false, false, false, false, false];
+                var result = 0;
+
+                function calc(v)
+                {
+                    var val = parseInt(v);
+                    if(!flag[val]) // 체크가 되어있지 않은 경우
+                    {
+                        result += parseInt(document.getElementById("f" + val).value);
+                        flag[val] = !flag[val];
+                        insert(val);
+                    }
+                    else // 이미 체크가 되어있는 경우
+                    {
+                        result -= parseInt(document.getElementById("f" + val).value);
+                        flag[val] = !flag[val];
+                    }
+                    document.getElementById("result").value = result;
+                }
+
+                function insert(v)
+                {
+                    var node = document.createElement("span");
+                    var str = String();
+                    switch(v)
+                    {
+                    case 0:
+                        str += "딸기";
+                        break;
+                    case 1:
+                        str += "당근";
+                        break;
+                    case 2:
+                        str += "수박";
+                        break;
+                    case 3:
+                        str += "참외";
+                        break;
+                    case 4:
+                        str += "메론";
+                        break;
+                    }
+                    node.innerHTML = "<input type='checkbox'>" + str + "<br>";
+                    node.addEventListener("click", remove);
+                    document.getElementById("target").appendChild(node);
+                }
+
+                function remove()
+                {
+                    var c = this;
+                    var p = c.parentNode;
+                    p.removeChild(c);
+                }
+            </script>
+        </form>
+    </body>
+</html>

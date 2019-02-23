@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+
+        <!--TITLE-->
+        <title>라디오버튼 클릭</title>
+        <!--/TITLE-->
+        
+        <!--JAVA SCRIPT-->
+        <script>
+            var checked;
+
+            function setChecked(value) // 클릭하면 값 설정
+            {
+                checked = value;
+            }
+
+            function findChecked() // 선택된 것을 경고창을 통해 보여줌
+            {
+                if(checked != null)
+                    alert(checked + '이 선택되었음.');
+                else
+                    alert('값을 선택해주세요!');
+            }
+        </script>
+        <!--/JAVA SCRIPT-->
+    </head>
+    <!--/HEAD-->
+
+    <!--BODY-->
+    <body>
+        <!--HEADER-->
+        <header>
+            <h3>버튼을 클릭하면 선택된 라디오버튼의 value를 출력합니다.</h3>
+            <hr>
+        </header>
+        <!--/HEADER-->
+
+        <!--SECTION-->
+        <section>
+            <!--주의 : 라디오버튼은 반드시 같은 name으로 해야 라디오버튼의 의미가 있음-->
+            <input type="radio" name="city" value="seoul" onclick="setChecked('seoul')">서울&nbsp;
+            <input type="radio" name="city" value="busan" onclick="setChecked('busan')">부산&nbsp;
+            <input type="radio" name="city" value="chunchen" onclick="setChecked('chuncheon')">춘천&nbsp;
+            <input type="button" id="result" value="find checked" onclick="findChecked()"><br>
+        </section>
+        <!--/SECTION-->
+
+        <!--FOOTER-->
+        <footer></footer>
+        <!--/FOOTER-->
+    </body>
+    <!--/BODY-->
+</html>

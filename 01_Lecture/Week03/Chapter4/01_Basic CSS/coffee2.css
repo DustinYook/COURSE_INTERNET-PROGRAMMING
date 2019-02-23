@@ -1,0 +1,23 @@
+h1, p 
+{    
+     font-family: serif;
+     color: black;
+}
+h1 
+{    
+     border-bottom: 1px solid blue;
+     color: red;
+}
+body 
+{
+
+     background-color: yellow;
+}
+.first
+{
+    background-color: teal;
+}
+.second
+{
+    background-color: turquoise;
+}

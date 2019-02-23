@@ -1,0 +1,27 @@
+﻿<!--text-transform 프로퍼티의 사용-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			p.upper 
+			{ 
+				text-transform:uppercase; /* 대문자로 */
+			}
+			p.lower 
+			{ 
+				text-transform:lowercase; /* 소문자로 */
+			}
+			p.capit 
+			{ 
+				text-transform:capitalize; /* 제일 앞만 대문자로 */
+			}
+		</style>
+	</head>
+	<body>
+		<p class="upper">text_transform is uppercase.</p>
+		<p class="lower">text_transform is lowercase.</p>
+		<p class="capit">text_transform is capitalize.</p> 
+		<!--대문자 전환기준이 띄어쓰기 있는 부분임에 유의-->
+		<!--Text_transform Is Capitalize.와 같이 됨에 주의하도록!-->
+	</body>
+</html>

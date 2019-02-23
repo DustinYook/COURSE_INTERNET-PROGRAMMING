@@ -1,0 +1,23 @@
+<!--프로그램 목적: 체크박스의 사용법-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>체크 박스 만들기</title>
+	</head>
+	<body>
+		<h3>먹고 싶은 것 모두 체크하세요</h3>
+		<hr/>
+		<form method="get" name="food">
+			<!--input type="checkbox"로 쓰면 체크박스 생성-->
+			<!--checked 속성을 쓰면 디폴트로 체크박스에 체크가 되게 함-->
+			<!--name은 value의 속성값을 저장하는 변수로 JS에서 처리할 때 사용-->
+			<!--value 속성값은 해당 체크박스가 선택된 경우 웹 서버에 전송되는 값-->
+			<label>짜장면</label><input type="checkbox" name="option1" value="1">
+			<label>짬뽕</label><input type="checkbox" name="option2" value="2" checked>
+			<label>탕수육</label><input type="checkbox" name="option3"value="3">
+			<br/>
+			<input type="submit">
+		</form>
+	</body>
+</html>

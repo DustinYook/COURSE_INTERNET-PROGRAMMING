@@ -1,0 +1,29 @@
+<!--프로그램 목적: for문을 이용한 합 구하기-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트</title>
+		<script>
+			function printNum()
+			{
+				var sum = 0;
+				for (var i = 1; i <= 10; i++)
+				{
+					sum += i;
+					document.write(i);
+					if(i == 10)
+						document.write(" = ");
+					else
+						document.write(" + ");
+				}
+				document.write(sum);
+			}
+		</script>
+	</head>
+	<body>
+		<h3>1부터 10까지 더하기</h3>
+		<hr>
+		<button onclick="printNum()">결과보기</button>
+	</body>
+</html>

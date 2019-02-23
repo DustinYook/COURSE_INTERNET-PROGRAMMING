@@ -1,0 +1,16 @@
+﻿<!--navigator 객체는 브라우저의 여러 정보를 저장-->
+<script>
+    for (var key in navigator) 
+    {
+        alert(key);
+        value = navigator[key];
+        document.write(key + ": " + value + "<br>");
+        // appCodeName : 브라우저의 코드네임
+        // appName : 브라우저의 이름
+        // appVersion : 브라우저의 버전정보
+        // cookieEnabled : 브라우저에서 쿠키가 활성화되어 있는지 여부
+        // onLine : 브라우저가 인터넷에 연결되어 있으면 true
+        // platform : 브라우저가 컴파일된 플랫폼
+        // userAgent : 브라우저에서 서버로 가는 user-agent 헤더
+    }
+</script>

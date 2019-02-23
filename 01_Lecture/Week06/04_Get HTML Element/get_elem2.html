@@ -1,0 +1,25 @@
+﻿<!--HTML elements의 id 속성을 통해 객체를 받아오는 처리-->
+<!--getElementById()를 통해서 객체를 받아올 수 있음-->
+<!DOCTYPE >
+<html>
+    <head>
+        <script>
+            function process() 
+            {
+                var obj = document.getElementById("target"); 
+                // target이라는 id를 가진 객체를 가져옴
+
+                var upper = obj.value.toUpperCase(); // 대문자로 전환하는 처리
+                alert(upper); // 경고창을 통해 사용자에게 알려줌
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <b>소문자를 입력하시면 대문자로 바꿔줍니다.</b><br>
+            <hr>
+            <input type="text" id="target" name="text1">
+            <input type="submit" value="제출" onclick="process()">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!--onload와 onunload 이벤트리스너 속성-->
+<html>
+    <head>
+        <script>
+            function onLoadDoc() 
+            {
+                alert("문서가 로드되었습니다.\n" + document.readyState);
+                document.body.style.backgroundColor = "red";
+                document.body.innerHTML = "로드되었습니다.";
+            }
+
+            function onUnloadDoc()
+            {
+                alert("문서가 로드되지않았습니다\n" + document.readyState);
+                document.body.style.backgroundColor = "blue";
+                document.body.innerHTML = "로드되지않았습니다.";
+            }
+        </script>
+    </head>
+    <body onload="onLoadDoc()" onunload="onUnloadDoc()"> 
+        <!--onload 이벤트리스너 속성은 로드가 완료된 경우 출력-->
+        <!--onunload 이벤트리스너 속성은 로드가 되지 않았을 경우 호출-->
+    </body>
+</html>

@@ -1,0 +1,19 @@
+﻿<!--onchange 이벤트리스너 속성은 해당 영역을 벗어나면 적용-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function sub() 
+            {
+                var x = document.getElementById("name");
+                x.value = x.value.toLowerCase(); // toLowerCase(): 소문자로 변경
+                // x.value = x.value.toUpperCase(); // toUpperCase(): 대문자로 변경
+            }
+        </script>
+    </head>
+    <body>
+        <!--onchange 이벤트리스너 속성은 해당 영역을 벗어나면 적용-->
+        영어단어: <input type="text" id="name" onchange="sub()">
+        <p>입력필드를 벗어나면 소문자로 변경됩니다.</p>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!--프로그램 목적: select를 이용한 콤보박스의 구현-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>콤보박스 만들기</title>
+	</head>
+	<body>
+		<h3>오늘 점심은?</h3>
+		<hr/>
+		<form>
+			<!--select: 드롭다운 선택지-->
+			<!--multiple 속성: 여러개 선택가능-->
+			<!--size 속성: 몇 개 보이게 할지 지정-->
+			<select name="china"> <!--datalist와 거의 유사-->
+				<option value="1">짜장면</option>
+				<option value="2" selected>짬뽕</option>
+				<option value="3">탕수육</option>
+			</select>
+
+			<!--datalist: input 박스 안에서만 보임-->
+			<input type="text" list="chinese_food">
+			<datalist name="china" id="chinese_food"> <!--datalist와 거의 유사-->
+				<option value="1">짜장면</option>
+				<option value="2" selected>짬뽕</option>
+				<option value="3">탕수육</option>
+			</datalist>
+		</form>
+	</body>
+</html>

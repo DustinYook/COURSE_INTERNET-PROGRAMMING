@@ -1,0 +1,23 @@
+<!--프로그램 목적: 컬러 다이얼로그로 색 입력-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>색 입력 받기</title>
+	</head>
+	<body>
+		<h3>컬러다이얼로그로 색 입력</h3>
+		<hr/>
+		<form>
+			<!--input type="color"는 컬러 다이얼로그를 출력함-->
+			<label>
+				글자색 선택
+				<input type="color" value="#FFFFFF" onchange="document.body.style.color=this.value">
+			</label>
+			<label>
+				배경색 선택
+				<input type="color" value="#FFFFFF" onchange="document.body.style.backgroundColor=this.value">
+			</label>
+		</form>
+	</body>
+</html>

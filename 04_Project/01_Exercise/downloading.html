@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>자바스크립트 연습</title>
+    </head>
+    <body>
+        <!--HEADER-->
+        <header>
+            <h1>자바스크립트 연습</h1>
+            <hr>
+        </header>
+        <!--/HEADER-->
+
+        <!--SECTION-->
+        <section>
+            <!--TIME-->
+            <b>현재시간&nbsp;&colon;&nbsp;</b>
+            <time id="now">
+                <script>
+                    function getTime()
+                    {
+                        var now = new Date;
+                        var str = new String; // 시간을 저장할 문자열
+                        str += now.getHours() + '시 '; // 시간 출력
+                        str += now.getMinutes() + '분 '; // 분 출력
+                        str += now.getSeconds() + '초'; // 초 출력
+                        str += '<br>';
+                        if(now.getSeconds() >= 50 && now.getSeconds() <= 59)
+                            document.getElementById('now').style.color = "red";
+                        else
+                            document.getElementById('now').style.color = "black";
+                        document.getElementById('now').innerHTML = str;
+                        setTimeout('getTime()', 1000); // 1초 마다 호출 
+                    }
+                    getTime();
+                </script>
+            </time><br>
+            <!--/TIME-->
+
+            <!--PROGRESS-->
+            <b id="status">다운로드 중&nbsp;</b><br>
+            <progress value="0" max="100" id="percent">
+                <script>
+                    function getProgress()
+                    {
+                        document.getElementById('percent').value += 10;
+                        if(document.getElementById('percent').value != 100)
+                            document.getElementById('status').innerHTML = "다운로드 중";
+                        else
+                        {
+                            document.getElementById('status').innerHTML = "다운로드 완료";
+                            document.getElementById('status').style.color = "red";
+                        }
+                        setTimeout('getProgress()', 1000); // 1초 마다 호출
+                    }
+                    getProgress();
+                </script>
+            </progress>
+            <!--/PROGRESS-->
+        </section>
+        <!--SECTION-->
+
+        <!--FOOTER-->
+        <hr>
+        <footer>
+            
+        </footer>
+        <!--/FOOTER-->
+    </body>
+</html>

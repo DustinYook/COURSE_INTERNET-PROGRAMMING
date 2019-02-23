@@ -1,0 +1,32 @@
+﻿<!--onmouseover와 onmouseout의 사용법-->
+<html>
+    <head>
+        <script>
+            // 마우스를 특정 객체 위에 올려놓았을 경우 적용
+            function OnMouseOver(elem) 
+            {
+                elem.style.border = "2px solid red";
+            }
+
+            // 마우스를 특정 객체 위에서 치우는 경우 적용
+            function OnMouseOut(elem) 
+            {
+                elem.style.border = "";
+            }
+        </script>
+
+        <style>
+            div
+            {
+                background-color: yellow;
+                width: 200px
+            }
+        </style>
+    </head>
+
+    <body>
+        <div onmouseover="OnMouseOver(this)" onmouseout="OnMouseOut(this)">
+            마우스를 이 요소 위에 이동하세요.
+        </div>
+    </body>
+</html>

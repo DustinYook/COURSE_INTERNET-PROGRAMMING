@@ -1,0 +1,12 @@
+﻿<!--visibility 속성을 동적으로 제어-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3 id="heading">이것은 헤딩입니다.</h3>
+
+        <input type="button" value="요소숨김" onclick="document.getElementById('heading').style.visibility = 'hidden'" />
+        <!--인라인으로 document.getElementById()와 같이 써도 됨-->
+        <!--visibility 속성은 visible일 때 표시, hiddent일 때 숨김-->
+        <input type="button" value="요소표시" onclick="document.getElementById('heading').style.visibility = 'visible'" />
+    </body>
+</html>

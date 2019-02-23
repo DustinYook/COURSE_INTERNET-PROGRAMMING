@@ -1,0 +1,27 @@
+<!--프로그램 목적: 시간정보입력 폼 요소 활용-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>시간 정보를 입력하는 폼 활용</title>
+	</head>
+	<body>
+		<h3>시간 정보 입력 HTML5 폼 요소들</h3>
+		<!--time: 인라인 시맨틱 태그-->
+		초기 세팅 : <time>2016년 9월 1일 밤 9시 30분(10초 32)</time><br/>
+		시간을 변경해 보세요
+		<hr/>
+		<form>
+			<!--month: 년과 월을 선택가능-->
+			<label>month:	<input type="month" value="2016-09"></label><br/> 
+			<!--week: 년과 주를 선택가능-->
+			<label>week : 	<input type="week" value="2016-W36"></label><br/>
+			<!--date: 년, 월, 일을 선택가능 (가장 많이 쓰일 듯)-->
+			<label>data : 	<input type="date" value="2016-09-01"></label><br/> 
+			<!--time: 시와 분을 선택가능-->
+			<label>time : 	<input type="time" value="21:30"></label><br/>
+			<!--datetime-local: 해당 국가의 시간을 선택가능-->
+			<label>local:	<input type="datetime-local" value="2016-09-01T21:30:10.32"></label><br/>
+		</form>
+	</body>
+</html>

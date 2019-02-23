@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--jQuery import-->
+        <script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+
+        <script>
+            $(document).ready(function () { // 로드가 되고
+                $("button").click(function () { // 클릭이 되면
+                    alert($("#dog").attr("src")); // id가 dog인 속성 중 src를 리턴
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <img id="dog" src="dog.png" alt="" width="120" height="100"><br>
+        <button>attr()</button>
+    </body>
+</html>

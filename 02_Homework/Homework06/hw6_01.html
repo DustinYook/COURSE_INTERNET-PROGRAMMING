@@ -1,0 +1,70 @@
+<!--hw6_01.html : 간단한 사칙연산을 할 수 있는 계산기-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>계산기</title>
+        <!--CSS-->
+        <style>
+            input
+            {
+                width: 50px;
+            }
+        </style>
+        <!--JS-->
+        <script src="hw6_01_script.js">
+        </script>
+    </head>
+    <body>
+        <form method="get">
+            <table>
+                <!--TABLE HEADER-->
+                <thead>
+                    <b>display&nbsp;</b>
+                    <input type="text" id="display" style="width:152px;" readonly><br>
+                </thead>
+                <!--/TABLE HEADER-->
+
+                <!--TABLE FOOTER-->
+                <tfoot>
+                    <td><input type="reset" value="Clear" id="clear"></td>
+                    <td><input type="button" value="Enter" id="enter" onclick="getResult()"></td>
+                </tfoot>
+                <!--/TABLE FOOTER-->
+
+                <!--TABLE BODY-->
+                <tbody>
+                    <!--FIRST ROW-->
+                    <tr>
+                        <td><input type="button" value="7" id="num7" onclick="input(7)"></td>
+                        <td><input type="button" value="8" id="num8" onclick="input(8)"></td>
+                        <td><input type="button" value="9" id="num9" onclick="input(9)"></td>
+                        <td><input type="button" value="/" id="div" onclick="input('/')"></td>
+                    </tr>
+                    <!--SECOND ROW-->
+                    <tr>
+                        <td><input type="button" value="4" id="num4" onclick="input(4)"></td>
+                        <td><input type="button" value="5" id="num5" onclick="input(5)"></td>
+                        <td><input type="button" value="6" id="num6" onclick="input(6)"></td>
+                        <td><input type="button" value="*" id="mult" onclick="input('*')"></td>
+                    </tr>
+                    <!--THIRD ROW-->
+                    <tr>
+                        <td><input type="button" value="1" id="num1" onclick="input(1)"></td>
+                        <td><input type="button" value="2" id="num2" onclick="input(2)"></td>
+                        <td><input type="button" value="3" id="num3" onclick="input(3)"></td>
+                        <td><input type="button" value="-" id="sub" onclick="input('-')"></td>
+                    </tr>
+                    <!--FOURTH ROW-->
+                    <tr>
+                        <td><input type="button" value="0" id="num0" onclick="input(0)"></td>
+                        <td><input type="button" value="+" id="add" onclick="input('+')"></td>
+                    </tr>
+                </tbody>
+                <!--/TABLE BODY-->
+            </table>
+        </form>
+    </body>
+</html>

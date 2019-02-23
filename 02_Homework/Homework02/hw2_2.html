@@ -1,0 +1,66 @@
+<!--프로그램 목적: table과 관련된 elements에 대한 학습-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>신체 검사</title>
+    </head>
+    <body>
+        <h3>신체 검사</h3>
+        <hr/>
+        <!--table은 일종의 container 영역을 정의함-->
+        <table border="1"> 
+        <!--HTML5에서는 CSS로 스타일 적용하는 것 추천-->
+            <!--TABLE TITLE-->
+            <caption>학생 신체 검사 표</caption>
+            <!--TABLE HEADER-->
+            <thead>
+                <tr> <!--tr: table row로 테이블의 한 행을 정의-->
+                    <th>이름</th> <!--th: table header cell로 열 제목을 정의-->
+                    <th>키</th>   <!--굵게, 가운데 정렬이 디폴트로 적용-->
+                    <th>체중</th>
+                    <th>시력</th>
+                </tr>
+            </thead>
+            <!--/TABLE HEADER-->
+
+            <!--TABLE FOOTER-->
+            <tfoot>
+                <tr>
+                    <th>평균</th>
+                    <th>181</th>
+                    <th>77</th>
+                    <th>1.3</th>
+                </tr>
+            </tfoot>
+            <!--/TABLE FOOTER-->
+
+            <!--TABLE BODY-->
+            <tbody>
+                <!--FIRST ROW-->
+                <tr>
+                    <!--td: table cell로 테이블의 한 열을 정의-->
+                    <td>황기태</td>
+                    <td>179</td>  
+                    <td>67</td>
+                    <td>1.0</td>
+                </tr>
+                <!--SECOND ROW-->
+                <tr>
+                    <td>이재문</td>
+                    <td>177</td>
+                    <td>77</td>
+                    <td>2.0</td>
+                </tr>
+                <!--THIRD ROW-->
+                <tr>
+                    <td>정인환</td>
+                    <td>189</td>
+                    <td>87</td>
+                    <td>1.2</td>
+                </tr>
+            </tbody>
+            <!--/TABLE BODY-->
+        </table>    
+    </body>
+</html>

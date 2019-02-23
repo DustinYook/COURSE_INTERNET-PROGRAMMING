@@ -1,0 +1,32 @@
+<!--프로그램 목적: 여러가지 종류의 버튼에 대한 학습-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>버튼이 있는 입력 폼</title>
+	</head>
+	<body>
+		<h3>버튼을 만들자</h3>
+		<hr/>
+		<form>
+			<!--검색-->
+			<label for="search">검색</label>
+			<input type="text" size="10" value="" name="search"><br/>
+			<!--일반버튼-->
+			<input type="button" value="일반버튼"> <!--input-->
+			<button type="button">일반버튼</button><br/> <!--button-->
+			<!--전송버튼-->
+			<label for="submission">전송버튼</label>
+			<input type="submit" value="전송버튼" id="submission"> <!--input-->
+			<button type="submit" id="submission">전송버튼</button><br/> <!--button-->
+			<!--리셋버튼-->
+			<label for="resetting">리셋버튼</label>
+			<input type="reset" value="리셋버튼" id="resetting">
+			<button type="reset" id="resetting">리셋버튼</button><br/>
+			<!--이미지버튼-->
+			<label for="image_btn">이미지버튼</label>
+			<input type="image" src="media/button.png" alt="이미지버튼" id="image_btn">
+			<button type="button"><img src="media/button.png" alt="이미지버튼" id="image_btn"></button>
+		</form>
+	</body>
+</html>

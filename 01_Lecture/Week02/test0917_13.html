@@ -1,0 +1,28 @@
+<!--프로그램 목적: label의 라디오버튼/체크박스의 선택형요소에서의 적용-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>캡션을 가진 라디오버튼</title>
+	</head>
+	<body>
+		<h3>먹고 싶은 것 하나만 선택?(&lt;label&gt;이용)</h3>
+		<hr>
+		<form>
+			<!--label을 통해 캡션과 폼 요소를 하나로 묶을 때 장점-->
+			<!--모바일 환경에서와 같은 경우, 체크박스/라디오버튼을 누르지 않고 이미지만 눌러도 선택가능한 장점-->
+			<label>
+				<input type="radio" name="china" value="1">
+				짜장면 <img src="media/jajang.png">
+			</label><br/>
+			<label>
+				<input type="radio" name="china" value="2" checked>
+				짬뽕 <img src="media/jjambbong.png">
+			</label><br/>
+			<label>
+				<input type="radio" name="china" value="3">
+				탕수육 <img src="media/tangsuyuk.png">
+			</label>
+		</form>
+	</body>
+</html>

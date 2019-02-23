@@ -1,0 +1,29 @@
+﻿<!--웹 폰트 적용하기-->
+<html>
+<head>
+  <title>Web Font Test</title>
+  <style>
+    @font-face 
+    {
+      font-family: myFont; /* 폰트 이름정의 */
+      src: url("http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf"); /* URL 작성 */
+    }
+    .first
+    {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .second
+    { 
+      font-family: myFont, serif; /* 첫번째 없으면 두번째 적용, 이렇게 끝까지 가도 없으면 깨짐 */
+    }
+  </style>
+</head>
+<body>
+  <div id="first">
+    이것은 일반폰트입니다.
+  </div>
+  <div id="second">
+      이것이 모질라에서 제공하는 Vera Serif Bold입니다. 
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!--overflow 프로퍼티의 이용-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p 
+            {
+                background-color: lightgreen;
+                width: 200px;
+                height: 50px;
+            }
+            #target 
+            {
+                border: 1px solid black;
+                width: 300px;
+                height: 100px;
+                /* overflow 프로퍼티는 자식요소가 부모요소의 크기보다 클 때 나머지 부분을 어떻게 처리할지 설정 */
+                overflow: scroll; /* 나머지 부분을 스크롤 */
+                /* overflow: hidden; 나머지 부분을 감춤 */
+            }
+        </style>
+    </head>
+    <body>
+        <div id=target>
+            <p>block #1</p>
+            <p>block #2</p>
+            <p>block #3</p>
+            <p>block #4</p>
+            <p>block #5</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>Web Shop Page</title>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+    <body>
+        <!--HEADER-->
+        <header>
+            <h1>
+                <img src="images/shop.png" width="50" height="50" alt="images">
+                <a href="index.html" class="purple">Web Shop</a>
+            </h1>
+        </header>
+        <!--/HEADER-->
+
+        <!--NAV-->
+        <nav>
+            <ul>
+                <li class="navbar"><a href="hw4_2.html">H o m e</a></li>
+                <li class="navbar"><a href="hw4_2.html">A b o u t &nbsp;U s</a></li>
+                <li class="navbar"><a href="hw4_2.html">N e w s</a></li>
+                <li class="navbar"><a href="hw4_2.html">M y &nbsp; A c c o u n t</a></li>
+                <li class="navbar"><a href="hw4_2.html">C o n t a c t s</a></li>
+            </ul>
+        </nav>
+        <!--/NAV-->
+
+        <!--ASIDE LEFT-->
+        <aside id="left">
+            <h4>카테고리</h4>
+            <ul id="aside_ul">
+                <li><a href="hw4_2_computer.html" target="iframe1">컴퓨터</a></li>
+                <li><a href="hw4_2_clothing.html" target="iframe1">의류</a></li>
+                <li><a href="hw4_2_music.html" target="iframe1">음악</a></li>
+                <li><a href="hw4_2_movie.html" target="iframe1">영화</a></li>
+                <li><a href="hw4_2_computer.html" target="iframe1">스포츠&#47;레저</a></li>
+                <li><a href="hw4_2_computer.html" target="iframe1">가구&#47;인테리어</a></li>
+                <li><a href="hw4_2_computer.html" target="iframe1">식품</a></li>
+            </ul>
+        </aside>
+        <!--/ASIDE LEFT-->
+
+        <!--SECTION-->
+        <section id="main">
+            <article id="article1">
+                <iframe name="iframe1" src="hw4_2_computer.html" width="440" height="350" seamless>
+                    <!--내용채워넣기-->
+                </iframe>
+            </article>
+        </section>
+        <!--/SECTION-->
+
+        <!--ASIDE RIGHT-->
+        <aside id="right">
+            <!--SHOPPING CART-->
+            <div id="shopcart">
+                <h3>Shopping Cart</h3>
+                <p>
+                    현재 쇼핑카트에 물품이 없습니다.<br>
+                    <a href="#">쇼핑카트 보기</a>
+                </p>
+            </div>
+            <!--/SHOPPING CART-->
+
+            <!--LOG IN-->
+            <div id="login">
+                <h3>Log In</h3>
+                <form method="get" name="login">
+                    아이디:<br>
+                    <input type="text"><br> <!--input 요소는 인라인요소-->
+                    패스워드:<br>
+                    <input type="password"><br>
+                    <input type="submit" value="로그인">
+                    <input type="reset" value="초기화"><br>
+                    <a href="#" class="purple">회원가입&nbsp;</a>
+                    <a href="#">비밀번호 분실</a><br>
+                </form>
+            </div>
+            <!--/LOG IN-->
+        </aside>
+        <!--/ASIDE RIGHT-->
+
+        <!--FOOTER-->
+        <footer>Copyright &copy;2013 Web Shop</footer>
+        <!--/FOOTER-->
+    </body>
+</html>

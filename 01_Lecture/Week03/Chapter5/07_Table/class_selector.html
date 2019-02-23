@@ -1,0 +1,56 @@
+﻿<!--class selector를 이용하여 홀수, 짝수줄의 스타일 다르게 제어가능-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #list 
+            {
+                font-family: "Trebuchet MS",sans-serif;
+                width: 100%;
+            }
+            #list, td, th 
+            {
+                border: 2px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            th
+            {
+                color: white;
+                background-color: teal;
+            }
+            .odd
+            {
+                background-color: goldenrod;
+            }
+            .even
+            {
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="list">
+            <tr>
+                <th>이름</th>
+                <th>이메일</th>
+            </tr>
+            <tr class="odd">
+                <td>김철수</td>
+                <td>chul@google.com</td>
+            </tr>
+            <tr class="even">
+                <td>김영희</td>
+                <td>young@google.com</td>
+            </tr>
+            <tr class="odd">
+                <td>홍길동</td>
+                <td>hong@google.com</td>
+            </tr>
+            <tr class="even">
+                <td>김수진</td>
+                <td>sujin@google.com</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!--프로그램 목적: 산술연산에 대한 이해-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>산술연산</title>
+	</head>
+	<body>
+		<h3>산술연산</h3>
+		<hr>
+		<script>
+			var x = 32;
+			var total = 100 + x * 2 / 4 - 3; // total은 113
+			var div = x / 10; // div는 3.2 (정수가 아닌 float으로 바뀜에 유의!)
+			var mod = x % 3; // x를 3로 나눈 나머지
+			var mult = x * 2; // x를 2로 곱한 값
+			document.write("x : " + x + "<br>");
+			document.write("100 + x * 2 / 4 - 3 = " + total + "<br>");
+			document.write("x / 10 = " + div + "<br>");
+			document.write("x / 10 = " + parseInt(div) + "<br>"); // int형으로 강제 형변환
+			document.write("x % 3 = " + mod + "<br>");
+			document.write("x * 2 = " + mult + "<br>");
+		</script>
+	</body>
+</html>

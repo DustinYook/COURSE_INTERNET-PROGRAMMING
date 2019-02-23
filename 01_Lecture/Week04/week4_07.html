@@ -1,0 +1,32 @@
+<!--프로그램 목적: 여러가지 상수/리터럴-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>상수</title>
+	</head>
+	<body>
+		<h3>상수</h3>
+		<hr>
+		<script>
+				var oct = 015; // 015는 8진수, 10진수로는 13 (접두사 0을 사용)
+				document.write("8진수 015는 십진수로 " + oct + "<br>");
+
+				var hex = 0x15; // 0x14는 16진수, 10진수로는 21 (접두사 0x를 사용)
+				document.write("16진수 0x15는 십진수로 " + hex + "<br>");
+
+				var condition = true;
+				document.write("condition은 " + condition + "<br>");
+				// var condition = True; // True로 하면 안됨
+
+				condition = false;
+				document.write("condition은 " + condition + "<br>");
+				
+				document.write('문자열 : 단일인용부호로도 표현' + "<br>");
+				document.write("그녀는 \"누구세요\"라고 했습니다. <br>"); 
+				// 제어문자열 \"는 쌍따옴표를 나타냄
+				document.write("그녀는 \'누구세요\'라고 했습니다.");
+				// 제어문자열 \'는 홑따옴표를 나타냄
+			</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!--display:inline을 이용하여 메뉴바 구성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>display 속성</title>
+        <style>
+            a:link
+            {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            a:visited
+            {
+                color: greenyellow;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            a:hover
+            {
+                color: yellow;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            a:active
+            {
+                color:gold;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .menubar li 
+            {
+                /* 블럭요소인 <li>를 인라인요소처럼 배치 */
+                display: inline; 
+                
+                background-color: teal;
+
+                border: 2px solid green;
+                border-radius: 25px;
+
+                margin: 0px;
+                padding: 10px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="menubar">
+            <li><a href="#">홈으로</a></li>
+            <li><a href="#">회사 소개</a></li>
+            <li><a href="#">제품 소개</a></li>
+            <li><a href="#">질문과 대답</a></li>
+            <li><a href="#">연락처</a></li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!--프로그램 목적: break문-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>break문</title>
+		<script>
+			function addUntil()
+			{
+				var i = 0, sum = 0;
+				while (true) // 무한루프
+				{ 
+					sum += i;
+					if (sum > 3000)
+						break; // 합이 3000보다 커지면 반복문을 벗어남
+					i++;
+				}
+				alert(i + "까지 더하면 3000을 넘음 : " + sum);
+			}
+		</script>
+	</head>
+	<body>
+		<h3>1에서 얼마까지 더해야 3000을 넘는가?</h3>
+		<hr>
+		<input type="submit" value="결과보기" onclick="addUntil()">
+	</body>
+</html>

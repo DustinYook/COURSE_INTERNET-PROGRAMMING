@@ -1,0 +1,13 @@
+﻿<!--screen 객체에 대한 학습-->
+<script>
+    function maxopen(url, winattributes) 
+    {
+        var maxwindow = window.open(url, '', winattributes); // open('url', 'target 속성', 'window 속성값');
+        maxwindow.moveTo(0, 0); // (0, 0)에서 시작점 이동시킴
+        maxwindow.resizeTo(screen.width, screen.height); // 최대 사이즈로 크기조정
+        // screen의 속성으로는 width/height, availWidth/availHeight, colorDepth/pixelDept가 있음
+    }
+ </script>
+ <a href="#" onclick="maxopen('http://www.google.com', '_blank', 'resize=1 scrollbars=1 status=1')" false>
+    전체 화면 보기
+</a>

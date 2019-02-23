@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>인프-중간고사2번</title>
+
+        <!--jQuery import-->
+        <script src="http://code.jquery.com/jquery-1.10.1.js"></script> 
+
+        <script>
+            function addproduct(obj) 
+            {
+                var div = $("#div")[0];
+                // var div = document.getElementById("div");
+
+                var labelobj = document.createElement("label");
+
+                var checkboxobj = document.createElement("input");
+                var textobj = document.createTextNode(obj.name);
+                var brobj = document.createElement("br");
+
+                var priceobj = $("#price")[0]; // 또는 $("#price").get(0)를 사용하면 객체 자체를 리턴
+                // var priceobj = document.getElementById("price");
+                
+                // if (obj.checked) 
+                if (obj.checked) 
+                {
+                    $(labelobj).attr("id", obj.name);
+                    // labelobj.setAttribute("id", obj.name); 
+
+                    $(checkboxobj).attr("type", "checkbox");
+                    // checkboxobj.setAttribute("type", "checkbox");
+
+                    $(checkboxobj).attr("checked", "checked");
+                    // checkboxobj.setAttribute("checked", "checked");
+                    
+                    $(document).ready(function () {
+                        $(checkboxobj).click(function () {
+                            if ($(this).checked) 
+                                priceobj.value = eval(priceobj.value + "+" + obj.value);
+                            else
+                                priceobj.value = eval(priceobj.value + "-" + obj.value);
+                        });
+                    });
+                     // checkboxobj.onclick = function () 
+                    // {
+                    //     if (this.checked) 
+                    //         priceobj.value = eval(priceobj.value + "+" + obj.value);
+                    //     else
+                    //         priceobj.value = eval(priceobj.value + "-" + obj.value);
+                    // }
+
+                    $(priceobj).val(eval($(priceobj).val() + "+" + $(obj).val()));
+                    // priceobj.value = eval(priceobj.value + "+" + obj.value);
+
+                    $(labelobj).append(checkboxobj, textobj, brobj);
+                    // labelobj.appendChild(checkboxobj);
+                    // labelobj.appendChild(textobj);
+                    // labelobj.appendChild(brobj);
+                    
+                    $(div).append(labelobj);
+                    // div.appendChild(labelobj);
+                } 
+                else 
+                {
+                    var rmobj = document.getElementById(obj.name);
+                    var checkbox = rmobj.firstChild;
+
+                    if (checkbox.checked) 
+                        priceobj.value = eval(priceobj.value + "-" + obj.value);
+                    var p = rmobj.parentElement;
+
+                    $(rmobj).remove();
+                    // p.removeChild(rmobj);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <label><input type="checkbox" name="딸기" value="1000" onclick="addproduct(this)">딸기</label>
+        <label><input type="checkbox" name="당근" value="2000" onclick="addproduct(this)">당근</label>
+        <label><input type="checkbox" name="수박" value="5000" onclick="addproduct(this)">수박</label>
+        <label><input type="checkbox" name="참외" value="10000" onclick="addproduct(this)">참외</label>
+        <label><input type="checkbox" name="메론" value="12000" onclick="addproduct(this)">메론</label><br>
+        <div id="div"></div>
+        <input type="text" id="price"><br>
+    </body>
+</html>

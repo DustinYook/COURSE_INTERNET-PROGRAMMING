@@ -1,0 +1,20 @@
+﻿<!--박스모델의 사이즈 계산-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div.test 
+            {
+                background-color: yellow;
+                width: 200px; /* 컨텐츠 사이즈는 200px */
+                padding: 10px; /* padding-left와 right는 각각 10px */
+                border: 5px solid red; /* border-width는 왼쪽, 오른쪽 각각 5px */
+                margin: 20px; /* margin-left와 right는 각각 20px */
+                /* 200px + (10px x 2) + (5px x 2) + (20px x 2) = 200 + 20 + 10 + 40 = 270px */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="test">이것은 div 요소로서 전체 폭은 270픽셀이다.</div>
+    </body>
+</html>

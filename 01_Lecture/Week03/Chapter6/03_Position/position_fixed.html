@@ -1,0 +1,44 @@
+﻿<!--position:fixed의 사용법-->
+<!--확인 눌러야만 진행할 수 있게 스크린하는 역할을 할 때 사용-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p 
+            {
+                background-color: lightgreen;
+                width: 200px;
+                height: 100px;
+            }
+            #two 
+            {
+                background-color: yellow;
+                position:fixed; /* 위치가 고정이 되어 스크롤을 해도 위치가 변하지 않음 */
+            }
+        </style>
+        <script>
+            function func()
+            {
+                document.getElementById("two").style.display = "none";
+            }
+        </script>
+    </head>
+    <body>
+        <p>block #1</p>
+        <p id="two">
+            block #2<br>
+            position: fixed;<br>
+            top:0px; right:10px;
+            <input type="button" onclick="func()" value="버튼">
+        </p>
+        <p>block #3</p>
+        <p>block #4</p>
+        <p>block #5</p>
+        <p>block #6</p>
+        <p>block #7</p>
+        <p>block #8</p>
+        <p>block #9</p>
+        <p>block #10</p>
+        <p>block #11</p>
+    </body>
+</html>

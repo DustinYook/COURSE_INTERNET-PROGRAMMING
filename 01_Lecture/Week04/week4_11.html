@@ -1,0 +1,24 @@
+<!--프로그램 목적: 논리연산자-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>논리연산자</title>
+	</head>
+	<body>
+		<h3>논리연산자</h3>
+		<hr>
+		<script>
+			var x = true; y = false;
+			document.write("x=" + x + ", y=" + y + "<br>");
+			document.write("x && y = " + (x && y) + "<br>"); // 논리 AND 연산 (논리곱)
+			document.write("x || y = " + (x || y) + "<br>"); // 논리 OR 연산 (논리합)
+			document.write("! x = " + (!x) + "<br>"); // 논리 NOT 연산 (논리부정)
+			
+			document.write("<hr>"); 
+			document.write("<h3>적용예시</h3>")
+			document.write("(3 > 2) && (3 < 4) : " + ((3 > 2) && (3 < 4)) + "<br>"); 
+			document.write("(3 == -2) || (-1 < 0) : " + ((3 == 2) || (-1 < 0)) + "<br>");
+		</script>
+	</body>
+</html>

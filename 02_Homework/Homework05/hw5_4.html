@@ -1,0 +1,31 @@
+<!-- 정수입력 -->
+<!-- 100보다 작은 정수만을 입력 --> 
+<!-- 1부터 그 수까지의 합을 alert를 호출하여 출력 -->
+<!-- 다른 형태의 데이터가 입력될 경우 경고 상자를 표시 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>프롬프트 다이얼로그</title>
+        <script>
+            function cumulativeAdd()
+            {
+                var input = prompt("100 이하의 정수만 입력: ", "101");
+                var sum = 0;
+                if(isNaN(input) || input > 100 || input < 0) // 예외처리
+                    alert("정수 " + input + "은 입력범위를 벗어났습니다.");
+                else // 정상적인 입력의 경우
+                {
+                    for(var i = 0; i <= input; i++)
+                        sum += i;
+                    alert(sum);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="javascript:cumulativeAdd()">결과보기</a>
+    </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="dustin">
+        <meta name="keywords" content="study helper">
+        <meta name="description" content="this application helps you to record study log">
+        <title>Study Log Maker</title>
+        <style>
+            @media only screen and (max-width: 200px)
+            {
+                body
+                {
+                    width: 100%;
+                    height: 100%;
+                    background: linen;
+                }
+            }
+            
+            #log
+            {
+                margin-left:auto;
+                margin-right:auto;
+                padding:10px;
+                
+                border: 1px solid black;
+                border-radius: 25px;
+                box-shadow: 5px 5px gray;
+
+                text-align: center;
+                width: 60%;
+                height: 400px;
+                font-weight: bold;
+                background-color: lightgoldenrodyellow;
+
+                float: center;
+            }
+            #btn
+            {
+                padding: 5px;
+                font-weight: bold;
+                background-color: skyblue;
+                box-shadow: 2px 2px gray;
+                border-radius: 5px; 
+            }
+            #calc
+            {
+                margin-left:auto;
+                margin-right:auto;
+                padding:10px;
+
+                border: 1px solid black;
+                border-radius: 25px;
+                box-shadow: 5px 5px gray;
+
+                text-align: center;
+                width: 60%;
+                height: 200px;
+                font-weight: bold;
+                background-color: lightgoldenrodyellow;
+
+                float: center;
+            }
+            #taskLog
+            {
+                color: green;
+            }
+            #result
+            {
+                color:red;
+                font-weight:bold;
+                text-align:center
+            }
+            #task
+            {
+                padding: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 style="text-align:center;">Welcome to Study Log Maker!</h1>
+            <hr>
+        </header>
+        <section>
+            <!--TIME LOG-->
+            <article id="log">
+                <h2>Study Log Generator</h2>
+                <input type="text" id="task" placeholder="task name" style="text-align:center;font-weight:bold">
+                <input type="button" id="btn" value="Record" onclick="ctrl()"><br>
+                <hr>
+                <div id="taskLog"></div>
+                <script>
+                    var beginCnt = 0; // begin에 id 번호 부여
+                    var endCnt = 0; // end에 id 번호 부여
+                    var flag = true; // 흐름을 제어하기 위한 플래그
+
+                    /* 기록을 제어하기 위한 함수 */
+                    function ctrl()
+                    {
+                        if(flag) 
+                        {
+                            flag = !flag; // flip
+                            document.getElementById("btn").value = "Stop";
+                            document.getElementById("btn").style.backgroundColor = "pink";
+                            insertBegin();
+                        }
+                        else
+                        {
+                            if(document.getElementById("task").value) // 입력이 NULL인지 확인
+                            {
+                                flag = !flag; // flip
+                                document.getElementById("btn").value = "Record";
+                                document.getElementById("btn").style.backgroundColor = "skyblue";
+                                insertEnd();
+                                document.getElementById("task").value = ""; // 입력박스 초기화
+                            }
+                            else
+                                alert("내용이 입력되지 않았습니다!");
+                        }
+                    }
+                    
+                    /* 시작시간을 입력하기 위한 함수 */
+                    function insertBegin()
+                    {
+                        // 현재시간
+                        var now = new Date(); 
+
+                        // 컨테이너
+                        var log = document.createElement("div"); 
+                        log.setAttribute("id", "log" + beginCnt);
+                        log.setAttribute("style", "margin: 5px;");
+
+                        // 체크박스
+                        var check = document.createElement("input"); 
+                        check.setAttribute("type", "checkbox");
+                        check.setAttribute("id", "check" + beginCnt);
+                        check.addEventListener("change", calculator);
+
+                        // 시작시간
+                        var begin = document.createElement("span"); 
+                        begin.setAttribute("id", "begin" + beginCnt);
+                        begin.innerHTML = ((now.getHours() < 10) ? "0" : "") + now.getHours() + ":";
+                        begin.innerHTML += ((now.getMinutes() < 10) ? "0" : "") + now.getMinutes();
+                        begin.innerHTML += ":" + ((now.getSeconds() < 10) ? "0" : "") + now.getSeconds();
+                        begin.setAttribute("style", "font-weight:bold;color:black;");
+
+                        // 틸드
+                        var tilde = document.createTextNode("~");
+
+                        // 로그 한 줄에 삽입
+                        log.appendChild(check);
+                        log.appendChild(begin);
+                        log.appendChild(tilde);
+
+                        // 전체 로그에 삽입
+                        document.getElementById("taskLog").appendChild(log);
+
+                        beginCnt++;
+                    }
+
+                    /* 종료시간을 입력하기 위한 함수 */
+                    function insertEnd()
+                    {
+                        // 현재시간
+                        var now = new Date(); 
+
+                        // 종료시간
+                        var end = document.createElement("span"); 
+                        end.setAttribute("id", "end" + endCnt);
+                        end.innerHTML = ((now.getHours() < 10) ? "0" : "") + now.getHours() + ":";
+                        end.innerHTML += ((now.getMinutes() < 10) ? "0" : "") + now.getMinutes();
+                        end.innerHTML += ":" + ((now.getSeconds() < 10) ? "0" : "") + now.getSeconds();
+                        end.setAttribute("style", "font-weight:bold;color:black;");
+
+                        // 주석표시
+                        var cmt = document.createTextNode(" // ");
+
+                        // 업무설명
+                        var task = document.createElement("span"); 
+                        task.setAttribute("id", "task" + endCnt);
+                        task.innerHTML = document.getElementById("task").value;
+                        
+                        // 빈칸
+                        var nbsp = document.createTextNode(" ");
+
+                        // 삭제버튼
+                        var rmv = document.createElement("input");
+                        rmv.setAttribute("type", "button");
+                        rmv.setAttribute("value", "Delete");
+                        rmv.setAttribute("id", "rmv" + endCnt);
+                        rmv.addEventListener("click", remove);
+                        rmv.setAttribute("style", "width:100px;margin-top:5px;margin-bottom:5px;background-color:pink;box-shadow:2px 2px gray;font-weight:bold;");
+
+                        // 수정버튼
+                        var edit = document.createElement("input");
+                        edit.setAttribute("type", "button");
+                        edit.setAttribute("value", "Edit");
+                        edit.setAttribute("id", "edit" + endCnt);
+                        edit.addEventListener("click", editing);
+                        edit.setAttribute("style", "width:100px;margin-top:5px;margin-bottom:5px;background-color:skyblue;box-shadow:2px 2px gray;font-weight:bold;");
+
+                        // 줄바꿈
+                        var br = document.createElement("br"); 
+                        
+                        // 수평선
+                        var hr = document.createElement("hr");
+
+                        // 로그 한줄에 삽입
+                        document.getElementById("log" + endCnt).appendChild(end);
+                        document.getElementById("log" + endCnt).appendChild(cmt);
+                        document.getElementById("log" + endCnt).appendChild(task);
+                        document.getElementById("log" + endCnt).appendChild(br);
+                        document.getElementById("log" + endCnt).appendChild(rmv);
+                        document.getElementById("log" + endCnt).appendChild(nbsp);
+                        document.getElementById("log" + endCnt).appendChild(edit);
+                        document.getElementById("log" + endCnt).appendChild(hr);
+
+                        endCnt++;
+                    }
+
+                    /* 삭제를 위한 함수 */
+                    function remove()
+                    {
+                        var ret = confirm("정말 삭제하시겠습니까?");
+                        if(ret)
+                        {
+                            var c = this.parentNode;
+                            var p = c.parentNode;
+                            p.removeChild(c);
+                        }
+                        else
+                            alert("삭제되지 않았습니다.");
+                    }
+
+                    function editing()
+                    {
+                        var target = this.parentNode.getElementsByTagName("span")[2];
+                        target.innerHTML = prompt("변경할 업무이름을 입력해주세요.");
+                    }
+                </script>
+            </article><br><br>
+            <!--/TIME LOG-->
+
+            <!--TIME CALCULATOR-->
+            <article id="calc">
+                <h2>Time Calcuator</h2>
+                <p>If you <mark>mark checkbox</mark>,<br>then the total study time will be calculated</p>
+                <label style="color:red;">
+                    Total Study Time:&nbsp;
+                    <input type="text" id="result" placeholder="0초" readonly>
+                </label>
+                <script>
+                    var result = 0;
+
+                    function calculator()
+                    {
+                        // begin과 end의 문자열을 받아옴
+                        var beginStr = this.parentNode.getElementsByTagName("span")[0].innerHTML;
+                        var endStr = this.parentNode.getElementsByTagName("span")[1].innerHTML;
+                            
+                        // pasing을 함
+                        var beginParse = beginStr.split(":");
+                        var endParse = endStr.split(":");
+                                
+                        // Date 객체 생성하여 시간차이를 구함
+                        var b = new Date("0", "0", "0", beginParse[0], beginParse[1], beginParse[2], "0"); // 시작시간
+                        var e = new Date("0", "0", "0", endParse[0], endParse[1], endParse[2], "0"); // 끝 시간
+                        var diff = (e.getTime() - b.getTime()) / 1000; // sec 단위로 시간차이 나타냄
+                    
+                        // 체크박스가 체크되어있으면 누적덧셈, 아니면 누적에서 빼기처리
+                        if(this.checked)
+                            result += diff;
+                        else
+                            result -= diff;
+
+                        var temp = result;
+
+                        var sec = result % 60;
+                        result -= sec;
+                        result /= 60;
+                        var min = result % 60;
+                        var hr = result / 60;
+
+                        result = temp;
+
+                        var str = (hr.toFixed(0) > 0) ? (hr.toFixed(0) + "시간 ") : "";
+                        str += (min.toFixed(0) > 0) ? (min.toFixed(0) + "분 ") : "";
+                        str += (sec.toFixed(0) > 0) ? (sec.toFixed(0) + "초") : "0초";
+
+                        document.getElementById("result").value = str;
+                        document.getElementById("result").style.color = "red";
+                        document.getElementById("result").style.fontWeight = "bold";
+                        document.getElementById("result").style.textAlign = "center";
+                    }
+                </script>
+            </article>
+            <!--/TIME CALCULATOR-->
+            
+        </section>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!--프로그램 목적: 비트연산자-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>비트연산</title>
+		<script>
+			// 숫자 v를 8비트 2진수로 변환
+			function digit8(v) 
+			{ 
+				var str = "";
+				for (i = 0; i < 8; i++, v <<= 1)
+				{
+					if (v & 0x80) 
+						str += "1";
+					else 
+						str += "0";
+				}
+				return str;
+			}
+		</script>
+	</head>
+	<body>
+		<h3>비트논리연산과 비트시프트연산</h3>
+		<hr>
+		<script>
+			var x = 10, y = 3;
+			document.write("<pre>");
+				document.write("x=" + x + ", y=" + y + "<br>"); // x, y 값 출력
+				document.write("x : 		" + digit8(x) + "<br>"); // x 값 출력
+				document.write("y : 		" + digit8(y) + "<br>"); // y 값 출력
+				/* 비트논리연산 */
+				document.write("<hr>");
+				document.write("<h3>비트논리연산</h3>")
+				document.write("x & y  : 	" + digit8(x & y) + "<br>"); // 비트 AND 연산
+				document.write("x | y  : 	" + digit8(x | y) + "<br>"); // 비트 OR 연산
+				document.write("x ^ y  : 	" + digit8(x ^ y) + "<br>"); // 비트 XOR 연산
+				document.write("~x     : 	" + digit8(~x) + "<br>"); // 비트 NOT 연산
+				/* 비트시프트연산 */
+				document.write("<hr>");
+				document.write("<h3>비트시프트연산</h3>")
+				document.write("x << 1 : 	" + digit8(x << 1) + " (" + (x << 1) + ")<br>"); // 2를 곱한 것과 동일
+				document.write("x >> 1 : 	" + digit8(x >> 1) + " (" + (x >> 1) + ")<br>"); // 2를 나눈 것과 동일
+				document.write("x >>> 1: 	" + digit8(x >>> 1) + " (" + (x >>> 1) + ")"); // 2를 나눈 것과 동일
+			document.write("</pre>");
+		</script>
+	</body>
+</html>

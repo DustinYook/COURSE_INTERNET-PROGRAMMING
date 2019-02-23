@@ -1,0 +1,26 @@
+﻿<!--후손결합자와 자식결합자-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* body 안의 모든 em 요소 */
+            body em 
+            { /* 후손결합자 : 모든 em 태그를 선택 */
+                color: red; 
+            }   
+            /* body 안의 직계 h1 요소 */
+            body > h1 
+            { /* 자식결합자 : 오직 직계의 h1 태그만 선택 */
+                color: blue; 
+            }   
+        </style>
+    </head>
+    <body>
+        <h1>This headline is <em>very</em> important</h1>
+        <section>
+            <!--여기는 body의 직계자식이 아니여서 선택 안 됨에 유의!-->
+            <h1>This headline will not be selected</h1>
+            <p>This paragraph is <em>very</em> important</p>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!--hw6_02.html : 초에 따라 배경색이 바뀌도록 제어-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+        <title>짝수, 홀수 색깔</title>
+    </head>
+    <body>
+        <section>
+            <p>
+                페이지 방문 초시간이 짝수이면 violet,<br>
+                홀수이면 lightskyblue 배경<br>
+            </p>
+            <hr>
+            <span>현재 시간 : 
+                <time id="clock"> 
+                    <script>
+                        function setClock()
+                        {
+                            var now = new Date(); // Date 인스턴스 생성
+                            var s = now.getHours() + '시 ' + now.getMinutes() + '분 ' + now.getSeconds() + '초';
+                            document.getElementById('clock').innerHTML = s;
+                            if(parseInt(now.getSeconds()) % 2 == 0) // 짝수면 배경색 속성값을 violet으로 지정
+                                document.body.style.backgroundColor = "violet"; 
+                            else // 홀수면 배경색 속성값을 lightskyblue로 지정
+                                document.body.style.backgroundColor = "lightskyblue"; 
+                            setTimeout('setClock()', 1000);
+                        }
+                        setClock(); // 지속적으로 재귀호출
+                    </script>
+                </time>
+            </span>
+        </section>
+    </body>
+</html>

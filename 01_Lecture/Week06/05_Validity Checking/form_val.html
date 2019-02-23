@@ -1,0 +1,77 @@
+﻿<!--length를 이용하여 유효성검사; 입력 최소,최대길이 및 공백검사-->
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+
+        <!--TITLE-->
+        <title>회원가입</title>
+        <!--/TITLE-->
+
+        <!--CSS-->
+        <style></style>
+        <!--/CSS-->
+
+        <!--JAVA SCRIPT-->
+        <script>
+            function checkLength(elem, min, max) 
+            {
+                var s = elem.value;
+
+                // 입력값이 최대,최소 길이를 준수하는지 확인
+                if (s.length >= min && s.length <= max) 
+                    return true; // 제어권 넘김
+                else 
+                {
+                    // 필드의 입력값이 없으면 경고창을 띄움
+                    if (s.length == 0) 
+                    {
+                        alert("입력값이 없습니다!");
+                        elem.focus();
+                        return false; // 제어권 넘김
+                    }
+                    alert("입력값은 최소 " + min + " 문자 이상 " + max + " 문자 이내여야 합니다!");
+                    elem.focus(); // elem에 focus를 줌
+                    return false; // 제어권 넘김
+                }
+            }
+        </script>
+        <!--/JAVA SCRIPT-->
+    </head>
+    <!--/HEAD-->
+
+    <!--BODY-->
+    <body>
+        <!--HEADER-->
+        <header>
+            <h3>회원가입</h3>
+        </header>
+        <!--/HEADER-->
+
+        <!--SECTION-->
+        <section>
+            <form>
+                <fieldset>
+                    이름(6-8 문자): <input type='text' id='name'><br>
+                    주소: <input type='text' id='addr'><br>
+                    생일: <input type='date' id='birthday'><br>
+                    아이디(6-8 문자): <input type='text' id='username'><br>
+                    이메일: <input type='email' id='email'><br>
+                    휴대폰: <input type='tel' id='phone'><br>
+                    <input type='button' value='확인' 
+                    onclick="checkLength(document.getElementById('name'), 3, 6)">
+                    <br>
+                </fieldset>
+            </form>
+        </section>
+        <!--/SECTION-->
+
+        <!--FOOTER-->
+        <footer></footer>
+        <!--/FOOTER-->
+    </body>
+    <!--/BODY-->
+</html>

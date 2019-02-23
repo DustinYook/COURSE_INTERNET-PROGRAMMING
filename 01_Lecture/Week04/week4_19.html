@@ -1,0 +1,28 @@
+<!--프로그램 목적: while문-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>while문</title>
+		<!--내부 자바스크립트-->
+		<script>
+			function cumulativeAdd()
+			{
+				var n = prompt("0보다 큰 정수를 입력하세요", 0);
+				n = parseInt(n); // 문자열을 숫자로 바꿈 (빼먹으면 큰일남!)
+				var i = 0, sum = 0;
+				while (i <= n) 
+				{ 
+					sum += i; // 누적합
+					i++;
+				}
+				alert("0에서 " + n + "까지 합은 " + sum);
+			}
+		</script>
+	</head>
+	<body>
+		<h3>while문을 이용한  0에서 n까지 합</h3>
+		<hr>
+		<a href="javascript:cumulativeAdd()">누적합 구하기</a>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!--동적으로 HTML element의 innerHTML(content) 변경하기-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>동적으로 변경하기</title>
+        <script>
+            function get() 
+            {
+                var val = document.getElementById("ex").innerHTML;
+                // ex의 innerHTML을 받아옴
+
+                alert(val); // 그 값을 경고창을 통해 출력
+            }
+            
+            function set(v) 
+            {
+                document.getElementById("ex").innerHTML = v; // 새로운 값으로 설정
+            }
+        </script>
+    </head>
+    <body>
+        <div id="ex">여기가 div로 선언되었습니다.</div>
+        <a href="#" onclick="get()">div 요소 내용 출력하기</a><br />
+        <a href="#" onclick="set('변경되었습니다.')">div 요소 내용 변경하기</a>
+    </body>
+</html>

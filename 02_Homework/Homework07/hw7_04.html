@@ -1,0 +1,65 @@
+<!--의도: HTML 요소를 동적으로 생성하기-->
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <meta content="yook">
+
+        <!--TITLE-->
+        <title>라면을 끓이는 순서</title>
+        <!--/TITLE-->
+
+        <!--CSS-->
+        <style>
+            #list
+            {
+                background-color: greenyellow;
+            }
+        </style>
+        <!--/CSS-->
+
+        <!--JAVA SCRIPT-->
+        <script>
+            var count = 0; // 사용자 입력값이 있으면 초기값 제거
+
+            function userInput()
+            {
+                // 1단계 : 자식노드를 생성
+                var node = document.createElement('li');
+
+                // 2단계 : 사용자 입력값 받음 
+                node.innerHTML = prompt('라면을 끓이는 순서를 입력하라', '');
+
+                // 3단계 : 자식노드를 추가함
+                document.getElementById('list').appendChild(node);
+            }
+        </script>
+        <!--/JAVA SCRIPT-->
+    </head>
+    <!--/HEAD-->
+
+    <!--BODY-->
+    <body>
+        <!--HEADER-->
+        <header>
+            <h3>라면을 끓이는 순서</h3>
+            <hr>
+        </header>
+        <!--/HEADER-->
+
+        <!--SECTION-->
+        <section>
+            <ol id="list" type="A" onclick="userInput()">
+                <li>물을 끓인다.</li>
+            </ol>
+        </section>
+        <!--/SECTION-->
+
+        <!--FOOTER-->
+        <footer></footer>
+        <!--/FOOTER-->
+    </body>
+    <!--/BODY-->
+</html>

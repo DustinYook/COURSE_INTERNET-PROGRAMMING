@@ -1,0 +1,38 @@
+<!--프로그램 목적: variable scope-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>variable scope</title>
+	</head>
+	<body>
+		<h3>변수의 범위</h3>
+        <hr>
+        <!--첫번째 스크립트-->
+		<script>
+			var x = 0;
+            function func()
+            {
+                var x = 1;
+                y = 2;
+                document.write(x); // 지역변수 x = 1을 참조
+                document.write("<br>");
+                document.write(this.x); // 전역변수 x = 0을 참조
+                document.write("<br>");
+            }
+            func();
+            document.write(y);
+            document.write("<br>");
+        </script>
+        <hr>
+        <!--두번째 스크립트-->
+        <script>
+            var ret = null; // null: 값이 없음
+            document.write(ret);
+            document.write("<br>");
+            ret = NaN; // NaN: Not a Number
+            document.write(ret);
+            document.write("<br>");
+        </script>
+	</body>
+</html>

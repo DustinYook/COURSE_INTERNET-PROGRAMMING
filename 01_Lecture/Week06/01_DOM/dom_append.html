@@ -1,0 +1,17 @@
+﻿<!--동적으로 HTML element 추가-->
+<script>
+    function addtext(t) 
+    {
+        if (document.createTextNode) // 브라우저가 create를 지원하는지 확인 
+        {
+            var node = document.createTextNode(t); 
+            // createTextNode(str)는 안의 text만 content에 추가
+            // createElement('요소명')는 해당 요소가 추가됨  
+
+            // node.parentElement.appendChild(node); // 아직 parent가 없어서 이렇게 쓰면 안됨!
+            document.getElementById("target").appendChild(node);
+        }
+    }
+</script>
+<div id="target" onclick="addtext('동적으로 텍스트가 추가됩니다.')" 
+style="font: 20px bold;">여기를 클릭하세요.</div>

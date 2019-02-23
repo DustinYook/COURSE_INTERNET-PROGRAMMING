@@ -1,0 +1,44 @@
+﻿<!--text-align 프로퍼티의 이용-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, td, th 
+            { 
+                border: 5px solid blue;   
+                border-collapse:collapse; 
+                text-align: center;
+                /* text-align을 이용하여 텍스트의 위치제어 */
+                background-color: skyblue;
+            }
+            caption
+            {
+                font-weight:bold;
+                font-size:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>연락처 목록</caption>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>이메일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--FIRST-->
+                <tr>
+                    <td>김철수</td>
+                    <td>chul@google.com</td>
+                </tr>
+                <!--SECOND-->
+                <tr>
+                    <td>김영희</td>
+                    <td>young@google.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
